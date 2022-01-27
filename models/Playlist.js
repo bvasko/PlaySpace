@@ -1,20 +1,51 @@
-module.exports = function(sequelize, DataTypes) {
-  var Playlist = sequelize.define('Playlist', {
-    name: DataTypes.STRING,
-    creatorID: DataTypes.STRING,
-    upvotes: DataTypes.INTEGER,
-    comments: DataTypes.INTEGER,
-    views: DataTypes.INTEGER,
-    createdAt: {
-      type: DataTypes.DATE,
-      defaultValue: new Date()
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Playlist extends Model {}
+
+Playlist.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    favoritedBy: DataTypes.STRING,
-  });
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    comments: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    upvotes: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    dateCreated: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    favorited: {
+      type: DataTypes.BOOLEAN,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Playlist',
+  }
+);
 
-  Playlist.associate = function(models) {
-    // playlist belongs to Many
-  };
-
-  return Playlist;
-};
+module.exports = Playlist;
