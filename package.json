@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/LFerrett/PlaySpace/issues"
   },
-  "homepage": "https://github.com/LFerrett/PlaySpace#readme"
+  "homepage": "https://github.com/LFerrett/PlaySpace#readme",
+  "devDependencies": {
+    "dotenv": "^14.3.2"
+  }
 }

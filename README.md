@@ -2,17 +2,23 @@
 
 ## Description
 
-PlaySpace is a music sharing app designed to share AppleMusic playlists. Save your playlists to the app and learn what others are listening to. Users can share playlists 
+PlaySpace is a music sharing app designed to share Spotify playlists. Save your playlists to the app and learn what others are listening to. Users can share playlists 
 
 ## Table of Contents
 
-- [Deployment](#deployment)
-- [Installation](#installation)
-- [Usage](#usage)
-- [User Story](#userstory)
-- [Credits](#credits)
-- [License](#license)
-- [Questions](#questions)
+- [PlaySpace: A Music Sharing App](#playspace-a-music-sharing-app)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Deployment](#deployment)
+  - [Installation](#installation)
+  - [Spotify API](#spotify-api)
+    - [Endpoints](#endpoints)
+    - [Authentication](#authentication)
+  - [User Story](#user-story)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Questions](#questions)
 
 ## Deployment
 
@@ -22,11 +28,24 @@ PlaySpace is deployed on Heroku at: https://shielded-forest-19133.herokuapp.com/
 
 To run the app locally, clone the repository to your local development environment. Run npm install to install all dependencies. Source both the schema in MySQL. In a command terminal, navigate to the correct directory and first seed the application by running the command 'npm run seed' and then start the server using the command 'npm start'.
 
+Deploy to heroku with:
+```git push heroku main```
+
+## Spotify API
+
+This app uses the Spotify API.
+Here are links to some helpful documentation
+
+### Endpoints
+https://developer.spotify.com/documentation/web-api/reference/#/
+
+### Authentication
+https://developer.spotify.com/documentation/general/guides/authorization/
 ## User Story
 
 ```md
 AS A user of PlaySpace
-I WANT to share my apple playlists
+I WANT to share my Spotify playlists
 SO THAT other people can upvote, favorite, and comment on them
 ```
 
