@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS playspace_db;
+CREATE DATABASE playspace_db;
