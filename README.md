@@ -2,7 +2,7 @@
 
 ## Description
 
-PlaySpace is a music sharing app designed to share AppleMusic playlists. Save your playlists to the app and learn what others are listening to. Users can share playlists 
+PlaySpace is a music sharing app designed to share Spotify playlists. Save your playlists to the app and learn what others are listening to. Users can share playlists 
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ To run the app locally, clone the repository to your local development environme
 
 ```md
 AS A user of PlaySpace
-I WANT to share my apple playlists
+I WANT to share my Spotify playlists
 SO THAT other people can upvote, favorite, and comment on them
 ```
 
