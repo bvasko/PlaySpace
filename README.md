@@ -6,13 +6,16 @@ PlaySpace is a music sharing app designed to share AppleMusic playlists. Save yo
 
 ## Table of Contents
 
-- [Deployment](#deployment)
-- [Installation](#installation)
-- [Usage](#usage)
-- [User Story](#userstory)
-- [Credits](#credits)
-- [License](#license)
-- [Questions](#questions)
+- [PlaySpace: A Music Sharing App](#playspace-a-music-sharing-app)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Deployment](#deployment)
+  - [Installation](#installation)
+  - [User Story](#user-story)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Questions](#questions)
 
 ## Deployment
 
@@ -21,6 +24,9 @@ PlaySpace is deployed on Heroku at: https://shielded-forest-19133.herokuapp.com/
 ## Installation
 
 To run the app locally, clone the repository to your local development environment. Run npm install to install all dependencies. Source both the schema in MySQL. In a command terminal, navigate to the correct directory and first seed the application by running the command 'npm run seed' and then start the server using the command 'npm start'.
+
+Deploy to heroku with:
+```git push heroku main```
 
 ## User Story
 
