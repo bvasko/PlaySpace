@@ -1,2 +1,2 @@
-const helpers = {}
-module.exports = helpers;
+
+module.exports = {};
