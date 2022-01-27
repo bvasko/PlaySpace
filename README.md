@@ -11,6 +11,9 @@ PlaySpace is a music sharing app designed to share Spotify playlists. Save your 
   - [Table of Contents](#table-of-contents)
   - [Deployment](#deployment)
   - [Installation](#installation)
+  - [Spotify API](#spotify-api)
+    - [Endpoints](#endpoints)
+    - [Authentication](#authentication)
   - [User Story](#user-story)
   - [Usage](#usage)
   - [Credits](#credits)
@@ -28,6 +31,16 @@ To run the app locally, clone the repository to your local development environme
 Deploy to heroku with:
 ```git push heroku main```
 
+## Spotify API
+
+This app uses the Spotify API.
+Here are links to some helpful documentation
+
+### Endpoints
+https://developer.spotify.com/documentation/web-api/reference/#/
+
+### Authentication
+https://developer.spotify.com/documentation/general/guides/authorization/
 ## User Story
 
 ```md
