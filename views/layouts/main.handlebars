@@ -7,43 +7,57 @@
   <title>PlaySpace</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">PlaySpace</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+  <div class='container'>
+              <div class="col s12 justify-space-around">
+                <header class="display-flex justify-space-between align-center p-2">
+                    <nav>
+                      <div class="nav-wrapper">
+                        <a href="/homepage" class="brand-logo right">PlaySpace</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="left hide-on-med-and-down">
+                          {{#if logged_in}}
+                              <button class="waves-effect waves-light btn" id="profile"><li><a href="/profile">Profile</a></li></button>
+                              <button class="waves-effect waves-light btn" id="logout">Log Out</button>
+                              {{else}}
+                                <button class="waves-effect waves-light btn"><li><a href="/login">Log In</a></li></button>
+                          {{/if}}
+                        </ul>
+                      </div>
+                    </nav>
+
+                    <ul class="sidenav" id="mobile-demo">
+                     {{#if logged_in}}
+                              <li><a href="/profile">Profile</a></li>
+                              <li id='logout'>logout</li>
+                              {{else}}
+                                <li><a href="/login">Log In</a></li>
+                      {{/if}}
+                    </ul>
+                </header>
+                <main class="container container-fluid mt-5">
+                  <!-- Render the sub layout -->
+                  {{{ body }}}
+                </main>
+                <footer>
+                  
+                </footer>
+              </div>
+
+              <!-- Render script for logged in users only -->
+              {{#if logged_in}}
+              <script src="/js/logout.js"></script>
+              <script src='/js/index.js'></script>
+              {{/if}}
+              <!-- Compiled and minified JavaScript -->
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
   </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-
-<script src='views/layouts/main.handlebars'></script>
-<script src="/views/homepage.handlebars"></script>
-<script src='/views/login.handlebars'></script>
-<script src='/views/profile.handlebars'></script>
-<script src='/views/playlist.handlebars'></script>
 </body>
-
 </html>

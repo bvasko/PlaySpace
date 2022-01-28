@@ -1,16 +1,30 @@
-<div class='playSpace-container'>
-   <div class='card-header col-md-10'>
-       <h3>
-           Welcome to PlaySpace
-           <h1>Please login below.</h1>
-       </h3>
-   </div>
-   {{#each playlists as |playlist|}}
-       <div class='playlist col-md-5'>
-           <p>
-               {{playlist.id}}
-               {{playlist.profile}}
-           </p>
-       </div>
-    {{/each}}
+<div class='card-header col-md-10'>
+    <h3>
+        Welcome to PlaySpace
+    </h3>
 </div>
+{{#each playlists as |playlist|}}
+<div class="">
+    <div class="card small">
+    <div class="card-image">
+        <!-- figure out how to get image from spotify? <img src="xxxx.jpg"> -->
+        <!-- Contains the playlist name as the card title -->
+        <span class="card-title">{{name}}</span>
+        <div class="right">
+        {{#if favorited}}
+        <a href="#"><i class="material-icons">star</i></a>
+        {{else}}
+        <a href="#"><i class="material-icons">star_border</i></a>
+        {{/if}}
+        </div>
+    </div>
+    <div class="card-content">
+        <h3>{{name}}</h3>
+    </div>
+    <div class="card-action .left-align">
+        <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+        <a href="#"><i class="material-icons">comment</i> {{comments}}</a>
+    </div>
+    </div>
+</div>
+{{/each}}
