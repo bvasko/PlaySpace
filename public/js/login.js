@@ -17,7 +17,8 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/homepage');
+      //document.location.replace('/homepage');
+      document.location.replace('/spotify-login');
     } else {
       alert(response.statusText);
     }
