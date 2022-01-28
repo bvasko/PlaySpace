@@ -2,11 +2,17 @@
   "name": "play-space",
   "version": "1.0.0",
   "description": "PlaySpace - A social media music sharing app",
+  "engines": {
+    "node": "16.13.1"
+  },
   "main": "server.js",
   "scripts": {
+    "eslint-watch": "esw -w --clear \"**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon server.js esw",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "lint": "npm eslint **/*.js"
   },
   "keywords": [],
   "author": "",
@@ -14,11 +20,14 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
-    "dotenv": "^8.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2",
     "sequelize": "^6.3.5"
   },
   "repository": {
@@ -30,6 +39,7 @@
   },
   "homepage": "https://github.com/LFerrett/PlaySpace#readme",
   "devDependencies": {
-    "dotenv": "^14.3.2"
+    "eslint": "^8.7.0",
+    "eslint-watch": "^8.0.0"
   }
 }

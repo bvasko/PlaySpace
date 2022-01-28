@@ -17,6 +17,7 @@ PlaySpace is a music sharing app designed to share Spotify playlists. Save your 
   - [User Story](#user-story)
   - [Usage](#usage)
   - [Credits](#credits)
+    - [Resources](#resources)
   - [License](#license)
   - [Questions](#questions)
 
@@ -56,6 +57,10 @@ SO THAT other people can upvote, favorite, and comment on them
 ## Credits
 
 Coding was completed by Bonnie DiPasquale, Lauren Ferrett, Kara Heeb, and Tina Stancyzk.
+
+### Resources
+This series on fetching music from Spotify and transferring them to Apple Music was a big help:
+[Spotify to Apple Music](https://www.youtube.com/watch?v=RG_KF3w3btQ&list=PLzFtdULM-ECJ3_dCX9Pz7lno5MX7cwYDQ&index=9)
 
 ## License
 
