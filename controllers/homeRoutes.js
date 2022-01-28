@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Playlist } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Use withAuth middleware to prevent access to route
@@ -30,6 +30,18 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/', withAuth, async (req, res) => {
+  try {
+    const playlistData = await Playlist.findAll({ include: [{ model: User }] });
+    const playlist = playlistData.map(playlist => playlist.get({ plain: true }));
+    console.log(playlist)
+    res.status(200).json(playlist)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
 });
 
 module.exports = router;
