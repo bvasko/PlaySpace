@@ -81,6 +81,17 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/playlist', withAuth, async (req, res) => {
+  try {
+    const playlistData = await Playlist.findAll({ include: [{ model: User }] });
+    const playlist = playlistData.map(playlist => playlist.get({ plain: true }));
+    console.log(playlist)
+    res.status(200).json(playlist)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
 let redirect_uri_login = 'http://localhost:3001/callback'
 let client_id = process.env.SPOTIFY_CLIENT_ID
 let client_secret = process.env.SPOTIFY_CLIENT_SECRET
