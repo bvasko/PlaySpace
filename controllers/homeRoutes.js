@@ -14,6 +14,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/homepage', withAuth, async (req, res) => {
+const querystring = require('querystring');
+const {getSpotifyPlaylistURL} = require('../utils/spotify-helper.js');
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all playlists and JOIN with user data
     const playlistData = await Playlist.findAll({
@@ -90,11 +93,24 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-let redirect_uri_login = 'http://localhost:3001/callback'
-let client_id = process.env.SPOTIFY_CLIENT_ID
-let client_secret = process.env.SPOTIFY_CLIENT_SECRET
+router.get('/playlist', withAuth, async (req, res) => {
+  try {
+    const playlistData = await Playlist.findAll({ include: [{ model: User }] });
+    const playlist = playlistData.map(playlist => playlist.get({ plain: true }));
+    console.log(playlist)
+    res.status(200).json(playlist)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+const client_id = process.env.SPOTIFY_CLIENT_ID
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
 router.get('/spotify-login', function(req, res) {
+  const host = (req.hostname === 'localhost') ? 'http://localhost:3001' : process.env.FRONTEND_URI;
+  const redirect_uri_login = `${host}/callback`;
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -104,9 +120,30 @@ router.get('/spotify-login', function(req, res) {
     }))
 })
 
+router.get('/spotify-playlists', async function(req, res) {
+  console.log('session', req.session.logged_in);
+  console.log('req', req.params);
+  const token = req.params.access_token;
+  try {
+    const playlists = await fetch(getSpotifyPlaylistURL, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    if (!playlists) {
+      res.status(404).json({ message: 'No playlists found' });
+      return;
+    }
+  } catch(err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get('/callback', function(req, res) {
-  let code = req.query.code || null
-  let authOptions = {
+  const code = req.query.code || null
+  const host = (req.hostname === 'localhost') ? 'http://localhost:3001' : process.env.FRONTEND_URI;
+  const redirect_uri_login = `${host}/callback`;
+  const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     form: {
       code: code,
@@ -120,8 +157,9 @@ router.get('/callback', function(req, res) {
     json: true
   }
   request.post(authOptions, function(error, response, body) {
-    var access_token = body.access_token
-    let uri = process.env.FRONTEND_URI || 'http://localhost:3001/playlists'
+    console.log('spotify: ', response.body, body);
+    const access_token = body.access_token
+    const uri = `${host}/spotify-playlists`;
 
     res.redirect(uri + '?access_token=' + access_token)
   })
