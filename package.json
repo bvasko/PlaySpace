@@ -7,9 +7,12 @@
   },
   "main": "server.js",
   "scripts": {
+    "eslint-watch": "esw -w --clear \"**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon server.js esw",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "lint": "npm eslint **/*.js"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +39,8 @@
   },
   "homepage": "https://github.com/LFerrett/PlaySpace#readme",
   "devDependencies": {
-    "dotenv": "^14.3.2"
+    "dotenv": "^14.3.2",
+    "eslint": "^8.7.0",
+    "eslint-watch": "^8.0.0"
   }
 }
