@@ -74,7 +74,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.status('/');
     return;
   }
 
@@ -109,19 +109,23 @@ router.get('/spotify-login', function(req, res) {
 })
 
 router.get('/spotify-playlists', async function(req, res) {
-  console.log('session', req.session.logged_in);
-  console.log('req', req.params);
   const token = req.params.access_token;
+  console.log('session', req.params.access_token);
   try {
+    if (!token) {
+      res.status(200).json('not authenticated')
+    }
     const playlists = await fetch(getSpotifyPlaylistURL, {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
     });
+    console.log('spotify', playlists);
     if (!playlists) {
       res.status(404).json({ message: 'No playlists found' });
       return;
     }
+    res.status(200).json(playlists)
   } catch(err) {
     res.status(500).json(err);
   }
