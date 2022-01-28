@@ -2,6 +2,9 @@
   "name": "play-space",
   "version": "1.0.0",
   "description": "PlaySpace - A social media music sharing app",
+  "engines": {
+    "node": "16.13.1"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,11 +17,14 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2",
     "sequelize": "^6.3.5"
   },
   "repository": {
