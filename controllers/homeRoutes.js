@@ -2,18 +2,6 @@ const router = require('express').Router();
 const { User, Playlist } = require('../models');
 const withAuth = require('../utils/auth');
 const request = require('request');
-let querystring = require('querystring');
-
-router.get('/', async (req, res) => {
-  try {
-    // Pass serialized data and session flag into template
-    res.render('login');
-  } catch (error) {
-    res.status(404).json(error);
-  }
-});
-
-router.get('/homepage', withAuth, async (req, res) => {
 const querystring = require('querystring');
 const {getSpotifyPlaylistURL} = require('../utils/spotify-helper.js');
 router.get('/', withAuth, async (req, res) => {
