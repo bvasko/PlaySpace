@@ -19,7 +19,7 @@
       <a href="/homepage" class="brand-logo right">PlaySpace</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         {{#if logged_in}}
-        <li><a href="/profile">Profile</a></li>
+        <button class="waves-effect waves-light btn" id="profile"><li><a href="/profile">Profile</a></li></button>
         <button class="waves-effect waves-light btn" id="logout">Log Out</button>
         {{else}}
         <button class="waves-effect waves-light btn"><li><a href="/login">Log In</a></li></button>
