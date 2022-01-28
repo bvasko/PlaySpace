@@ -1,0 +1,15 @@
+{{#each playlists as |playlist|}}
+{{>playlist-details}}
+{{/each}}
+
+{{#if loggedIn}}
+<section class='playlist'>
+   <div class='playlist-details'>
+       <h3>{{playlist.name}}</h3>
+       <p>created by: {{playlist.creator_id}}</p>
+       <p>others have said: {{playlist.commments}}</p>
+   </div>
+</section>
+ 
+{{else}}
+<a href="/login">You must login before you can jam!</a>
