@@ -7,22 +7,25 @@
   <title>PlaySpace</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">PlaySpace</a>
-      </h1>
       <nav>
-        <!-- Conditionally render login or logout links -->
+        <div class="nav-wrapper">
+      <a href="/homepage" class="brand-logo right">PlaySpace</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <li><a href="/dashboard">Profile</a></li>
+        <button class="waves-effect waves-light btn" id="logout">Log Out</button>
         {{else}}
-        <a href="/login">login</a>
+        <button class="waves-effect waves-light btn"><li><a href="/login">Log In</a></li></button>
         {{/if}}
+      </ul>
+    </div>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
@@ -38,5 +41,7 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
