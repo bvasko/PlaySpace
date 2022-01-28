@@ -48,7 +48,7 @@ router.get('/playlist/:id', async (req, res) => {
         },
       ],
     });
-
+    // res.status(200).json(playlistData);
     const playlist = playlistData.get({ plain: true });
 
     res.render('playlist', {
