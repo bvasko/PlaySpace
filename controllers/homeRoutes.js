@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const request = require('request');
 let querystring = require('querystring');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all playlists and JOIN with user data
     const playlistData = await Playlist.findAll({
