@@ -81,7 +81,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/playlist', withAuth, async (req, res) => {
   try {
     const playlistData = await Playlist.findAll({ include: [{ model: User }] });
     const playlist = playlistData.map(playlist => playlist.get({ plain: true }));
