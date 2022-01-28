@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const request = require('request');
 let querystring = require('querystring');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/homepage', withAuth, async (req, res) => {
   try {
     // Get all playlists and JOIN with user data
     const playlistData = await Playlist.findAll({
@@ -24,10 +24,10 @@ router.get('/', withAuth, async (req, res) => {
       playlists,
       logged_in: req.session.logged_in
     });
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(404).json(error);
   }
-});
+})
 
 router.get('/playlist/:id', async (req, res) => {
   try {
@@ -74,7 +74,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 

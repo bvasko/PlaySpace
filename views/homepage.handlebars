@@ -1,16 +1,18 @@
-<div class='playSpace-container'>
-   <div class='card-header col-md-10'>
-       <h3>
-           Welcome to PlaySpace
-           <h1>Please login below.</h1>
-       </h3>
-   </div>
-   {{#each playlists as |playlist|}}
-       <div class='playlist col-md-5'>
-           <p>
-               {{playlist.id}}
-               {{playlist.profile}}
-           </p>
+{{#each playlists as |playlist|}}
+<div class="row mb-4">
+    <div class="col-md-5">
+        <div class='playSpace-container'>
+            <div class='card-header col-md-10'>
+            <h3>
+                Welcome to PlaySpace
+            </h3>
+        </div>
+            <div class='playlist col-md-5'>
+                <p>
+                    {{playlist.id}}
+                </p>
        </div>
-    {{/each}}
+        </div>
+    </div>
 </div>
+{{/each}}
