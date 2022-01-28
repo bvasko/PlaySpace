@@ -20,9 +20,9 @@ router.get('/', async (req, res) => {
     const playlists = playlistData.map((playlist) => playlist.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      playlists, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      playlists,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -105,8 +105,7 @@ router.get('/callback', function(req, res) {
       grant_type: 'authorization_code'
     },
     headers: {
-      'Authorization': 'Basic ' + (Buffer.from(
-          client_id + ':' + client_secret
+      'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret
       ).toString('base64'))
     },
     json: true
