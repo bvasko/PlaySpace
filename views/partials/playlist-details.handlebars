@@ -1,0 +1,22 @@
+<!-- Creates a large card in materialize -->
+<div class="card medium">
+  <div class="card-image">
+    <!-- figure out how to get image from spotify? <img src="xxxx.jpg"> -->
+    <!-- Contains the playlist name as the card title -->
+    <span class="card-title">{{name}}</span>
+    <div class="right">
+      {{#if favorited}}
+    <a href="#"><i class="material-icons">star</i></a> 
+       {{else}}
+    <a href="#"><i class="material-icons">star_border</i></a>
+     {{/if}}
+    </div>
+  </div>
+  <div class="card-content">
+    <p>Playlist Data Goes Here</p>
+  </div>
+  <div class="card-action .left-align">
+    <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+    <a href="#"><i class="material-icons">comment</i> {{comments}}</a>
+  </div>
+</div>
