@@ -117,7 +117,7 @@ router.get('/spotify-login', function(req, res) {
     querystring.stringify({
       response_type: 'code',
       client_id: process.env.SPOTIFY_CLIENT_ID,
-      scope: 'user-read-private user-read-email user-library-read',
+      scope: 'user-read-private user-read-email user-library-read playlist-read-private playlist-read-collaborative user-read-playback-state user-read-currently-playing user-modify-playback-state',
       redirect_uri: redirect_uri_login
     }))
 })
@@ -170,7 +170,7 @@ router.get('/spotify-playlists', withAuth, async function(req, res) {
     });
     const usersPlaylists = await data.json();
     const playlistData = await usersPlaylists.items.map(item => {
-      console.log(item.tracks)
+      console.log(item)
       return {
         description: item.description,
         name: item.name,
