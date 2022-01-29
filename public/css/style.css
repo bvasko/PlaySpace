@@ -45,3 +45,10 @@
     display: flex;
     background-color: var(--secondary);
   }
+
+  #playspace-logo{
+    position: relative;
+    top: 2px;
+    height: 60px;
+    
+  }
