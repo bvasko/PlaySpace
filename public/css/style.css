@@ -1,10 +1,10 @@
 :root {
-    --primary: #389393;
-    --secondary: #f5a25d;
-    --tertiary: #fa7f72;
-    --quatrinary: #6c6b67;
-    --light: #ebebeb;
-    --dark: #182c23;
+    --primary: #4b917d;
+    --secondary: hsl(77, 88%, 68%);
+    --tertiary: #f037a5;
+    --quatrinary: #4b917d;
+    --light: #ffffff;
+    --dark: #000000;
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
@@ -44,4 +44,11 @@
   nav {
     display: flex;
     background-color: var(--secondary);
+  }
+
+  #playspace-logo{
+    position: relative;
+    top: 2px;
+    height: 60px;
+    
   }
