@@ -1,4 +1,4 @@
 const baseSpotifyAPI = 'https://api.spotify.com/v1';
-const getSpotifyPlaylistURL = `${baseSpotifyAPI}/me/playlists?limit=50`;
-
-module.exports = {getSpotifyPlaylistURL}
+const PLAYLIST_URL = `${baseSpotifyAPI}/me/playlists?limit=20`;
+https://api.spotify.com/v1/
+module.exports = {PLAYLIST_URL}
