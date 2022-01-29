@@ -20,6 +20,7 @@
       <div class='container'>
         <div class='nav-wrapper'>
           <a href='/' class='brand-logo right'><img src="assets/images/playspace_logo_sm.png" alt="PlaySpace Logo" id="playspace-logo"></a>
+          
           <div class='row'>
             <ul class="left hide-on-med-and-down">
                     {{#if logged_in}}
@@ -35,26 +36,37 @@
     </nav>
   
   {{#if logged_in}}
-    <ul id="slide-out" class="sidenav">
+    <ul id="slide-out" class="sidenav sidenav-fixed">
     <li>
       <div class="user-view">
         <div class="background">
-          <img src="images/office.jpg">
+          <img src="./assets/images/record.jpg" style='height: 200px;' alt='record'>
         </div>
-        <a href="#user"><img class="circle" src=""></a>
+        <br>
         <a href="#name"><span class="black-text name">user name here</span></a>
         <a href="#email"><span class="black-text email">spotify account link</span></a>
       </div>
     </li>
 
-    <li><a href="/profile"><i class="material-icons">music_note</i>My Profile</a></li>
-    <li><button class="waves-effect waves-light btn" id='logout'><i class='material-icons'>eject</i> logout</button></li>
+    <li>
+      <button class='waves-effect waves light btn white-text' id='profile'>
+        <a href="/profile">
+          <i class="material-icons">music_note</i>
+            My Profile</a>
+      </button>      
+    </li>
+
+    <li><div class="divider"></div></li> 
+
+    <li>
+      <button class="waves-effect waves-light btn" id='logout'>
+        <i class='material-icons'>eject</i> 
+        logout
+      </button>
+    </li>
     
-    
-    
-    <li><div class="divider"></div></li>
     <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  
   </ul>
   <a href="#" data-target="slide-out" class="btn sidenav-trigger"><i class="material-icons">menu</i></a>
 {{/if}}

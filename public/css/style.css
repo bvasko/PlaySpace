@@ -18,9 +18,18 @@
     justify-content: flex-start;
     background-color: var(--quatrinary);
   }
+
+  header, main, footer {
+    padding-left: 300px;
+  }
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+  }
   
   header {
-    padding: 40px;
     text-align: center;
     background: var(--primary);
     color: var(--secondary);
@@ -44,6 +53,10 @@
   nav {
     display: flex;
     background-color: var(--secondary);
+  }
+
+  .white-text li a{
+    color: white
   }
 
   #playspace-logo{
