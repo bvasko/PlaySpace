@@ -176,7 +176,7 @@ router.get('/spotify-playlists', withAuth, async function(req, res) {
         name: item.name,
         tracks: item.tracks.total,
         id: item.id,
-        image: item.images[0].url || '',
+        image: item.images[0]?.url || '',
         ownerName: item.owner.display_name,
         ownerId: item.owner.id,
         public: item.public
