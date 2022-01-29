@@ -20,6 +20,7 @@
   }
   
   header {
+    font-family: 'Raleway', sans-serif;
     padding: 40px;
     text-align: center;
     background: var(--primary);
@@ -44,4 +45,12 @@
   nav {
     display: flex;
     background-color: var(--secondary);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
   }
