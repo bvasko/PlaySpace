@@ -39,7 +39,8 @@ Playlist.init(
       },
     },
     spotify_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },
   {

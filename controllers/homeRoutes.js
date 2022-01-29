@@ -159,7 +159,7 @@ router.get('/callback', function(req, res) {
 })
 
 /** Get the users first 20 spotify playlists **/
-router.get('/spotify-playlists', withAuth, async function(req, res) {
+router.get('/spotify-playlists', async function(req, res) {
   try {
     const token = req.query.access_token;
     const data = await fetch(PLAYLIST_URL, {
@@ -168,6 +168,7 @@ router.get('/spotify-playlists', withAuth, async function(req, res) {
         'Authorization': `Bearer ${req.query.access_token}`,
       },
     });
+    console.log("#################################################################################"+ JSON.stringify(data));
     const usersPlaylists = await data.json();
     const playlistData = await usersPlaylists.items.map(item => {
       console.log(item.tracks)
@@ -193,6 +194,7 @@ router.get('/spotify-playlists', withAuth, async function(req, res) {
     }
   } catch(err) {
     res.status(500).json(err);
+    console.log(err);
   }
 })
 
