@@ -5,7 +5,7 @@
     "upvotes": 55,
     "dateCreated": "12/12/2021",
     "favorited": true,
-    "spotify_id": ""
+    "spotify_id": "asdfadsfaas"
   },
   {
     "name": "Workout Tunes",
@@ -13,7 +13,7 @@
     "upvotes": 24,
     "dateCreated": "01/03/2022",
     "favorited": false,
-    "spotify_id": ""
+    "spotify_id": "asdfadsfaas"
   },
   {
     "name": "Taylor Swift Greatest Hits",
@@ -21,6 +21,6 @@
     "upvotes": 155,
     "dateCreated": "01/15/2022",
     "favorited": true,
-    "spotify_id": ""
+    "spotify_id": "asdfadsfaas"
   }
 ]

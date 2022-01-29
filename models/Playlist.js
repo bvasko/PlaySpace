@@ -40,7 +40,7 @@ Playlist.init(
     },
     spotify_id: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     }
   },
   {
