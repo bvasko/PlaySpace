@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const request = require('request');
 const querystring = require('querystring');
 const fetch = require('node-fetch-commonjs');
-const { PLAYLIST_URL } = require('../utils/spotify-helper.js');
+const { PLAYLIST_URL } = require('../utils/spotifyHelper.js');
 
 /** Render Homepage Route */
 router.get('/', withAuth, async (req, res) => {
