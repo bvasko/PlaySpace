@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/homepage');
+      document.location.replace('/spotify-login');
     } else {
       alert(response.statusText);
     }
