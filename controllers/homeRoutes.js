@@ -168,7 +168,6 @@ router.get('/spotify-playlists', async function(req, res) {
         'Authorization': `Bearer ${req.query.access_token}`,
       },
     });
-    console.log("#################################################################################"+ JSON.stringify(data));
     const usersPlaylists = await data.json();
     const playlistData = await usersPlaylists.items.map(item => {
       console.log(item.tracks)
