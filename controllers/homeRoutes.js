@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const request = require('request');
 const querystring = require('querystring');
 const fetch = require('node-fetch-commonjs');
-const { PLAYLIST_URL } = require('../utils/spotify-helper.js');
+const { PLAYLIST_URL } = require('../utils/spotifyHelper.js');
 
 /** Render Homepage Route */
 router.get('/', withAuth, async (req, res) => {
@@ -111,7 +111,7 @@ router.get('/spotify-login', function(req, res) {
    * Send spotify client_id to authorize url
    * This will return a code from spotify for step 2
    *
-   * TODO: Remove querystring since it's deprecated
+   * TODO: Replace querystring since it's deprecated
    * */
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
@@ -159,7 +159,7 @@ router.get('/callback', function(req, res) {
 })
 
 /** Get the users first 20 spotify playlists **/
-router.get('/spotify-playlists', async function(req, res) {
+router.get('/spotify-playlists', withAuth, async function(req, res) {
   try {
     const token = req.query.access_token;
     const data = await fetch(PLAYLIST_URL, {
@@ -169,11 +169,28 @@ router.get('/spotify-playlists', async function(req, res) {
       },
     });
     const usersPlaylists = await data.json();
+    const playlistData = await usersPlaylists.items.map(item => {
+      console.log(item.tracks)
+      return {
+        description: item.description,
+        name: item.name,
+        tracks: item.tracks.total,
+        id: item.id,
+        image: item.images[0].url || '',
+        ownerName: item.owner.display_name,
+        ownerId: item.owner.id,
+        public: item.public
+      }
+    })
+    // res.status(200).json(playlistData)
+    res.render('spotifyPlaylist', {
+      playlists: playlistData,
+      logged_in: req.session.logged_in
+    });
     if (!token) {
       // TODO: GET REFRESH TOKEN
-      res.status(200).json('refresh token')
+      res.status(200).json('need refresh token')
     }
-    res.status(200).json(usersPlaylists)
   } catch(err) {
     res.status(500).json(err);
   }
