@@ -38,6 +38,9 @@ Playlist.init(
         key: 'id',
       },
     },
+    spotify_id: {
+      type: DataTypes.INTEGER,
+    }
   },
   {
     sequelize,
