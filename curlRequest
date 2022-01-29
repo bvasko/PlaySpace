@@ -1,0 +1,1 @@
+curl -X "GET" "https://api.spotify.com/v1/me/playlists" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer BQAqlteVhjlZYVHTqEgw5OY8p6PeBgCo4uqDl6wBGF5mSsuiNSmQJ57zg5dQ04t148fh4e6xCFbjN-SjKStn7xu7oqTFZyGnj4DCuXGeVZO6ITQD3By0GjEYciCU5jw71h3AI1pc5DilUTNFFhZO76p6h9gVmQOssY2g6i5jk6c"
