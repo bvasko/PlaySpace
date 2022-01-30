@@ -1,15 +1,14 @@
 <!-- Creates a large card in materialize -->
 <div class="card medium">
   <div class="card-image">
-    <!-- figure out how to get image from spotify? <img src="xxxx.jpg"> -->
-    <!-- Contains the playlist name as the card title -->
-    <span class="card-title">{{name}}</span>
+    <img src="{{image}}" />
+    <span class="card-title"><i class="material-icons">playlist_play</i> {{name}}</span>
     <div class="right">
       {{#if favorited}}
-    <a href="#"><i class="material-icons">star</i></a> 
-       {{else}}
-    <a href="#"><i class="material-icons">star_border</i></a>
-     {{/if}}
+        <a href="#"><i class="material-icons">star</i></a>
+      {{else}}
+        <a href="#"><i class="material-icons">star_border</i></a>
+      {{/if}}
     </div>
   </div>
   <div class="card-content">

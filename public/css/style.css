@@ -20,7 +20,6 @@
   }
   
   header {
-    padding: 40px;
     text-align: center;
     background: var(--primary);
     color: var(--secondary);
@@ -46,9 +45,23 @@
     background-color: var(--secondary);
   }
 
+  .white-text li a{
+    color: white
+  }
+
   #playspace-logo{
     position: relative;
     top: 2px;
     height: 60px;
     
+  }
+
+  #logout2, #eject-icon, #logout-li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .card-title {
+    font-family: 'Heebo', sans-serif;
   }
