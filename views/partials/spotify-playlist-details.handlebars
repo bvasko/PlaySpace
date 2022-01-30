@@ -1,19 +1,29 @@
 <!-- Creates a large card in materialize -->
 <div class="card medium spotify">
     <span class="card-title">
-      <h5>PLAYLIST</h5>
+      {{#if psPlaylistId}}
+      <h5>PLAYLIST ADDED</h5>
+      {{else}}
+      <h5>PLAYLIST ADDED</h5>
+      {{/if}}
       {{name}}
     </span>
   <div class="card-image">
-    <!-- figure out how to get image from spotify? <img src="xxxx.jpg"> -->
-    <!-- Contains the playlist name as the card title -->
     <img src="{{image}}" />
   </div>
-  <div data-id="{{id}}" data-name="{{name}}" data-img_url="{{image}}" class="spotifyList button">
-      <a class="btn-floating"><i class="material-icons">add</i></a>
-  </div>
+    {{#if psPlaylistId}}
+      <div data-id="{{id}}" data-playspaceid="{{psPlaylistId}}" data-name="{{name}}" data-img_url="{{image}}" class="spotifyListRemove button">
+          <a class="btn-floating red"><i class="material-icons">remove</i></a>
+      </div>
+    {{else}}
+      <div data-id="{{id}}" data-name="{{name}}" data-img_url="{{image}}" class="spotifyListAdd button">
+          <a class="btn-floating"><i class="material-icons">add</i></a>
+      </div>
+    {{/if}}
   <div class="card-content">
-    <p>{{tracks}} dope tracks</p>
-    <p>{{description}}</p>
+    <p>
+      {{description}}
+      <span class="track-count">TRACKS: {{tracks}}</span>
+    </p>
   </div>
 </div>
