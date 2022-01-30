@@ -1,7 +1,7 @@
 [
   {
     "name": "Long Runs",
-    "comments": 12,
+    "user_comments": 12,
     "upvotes": 55,
     "dateCreated": "12/12/2021",
     "favorited": true,
@@ -10,7 +10,7 @@
   },
   {
     "name": "Workout Tunes",
-    "comments": 5,
+    "user_comments": 5,
     "upvotes": 24,
     "dateCreated": "01/03/2022",
     "favorited": false,
@@ -19,7 +19,7 @@
   },
   {
     "name": "Taylor Swift Greatest Hits",
-    "comments": 92,
+    "user_comments": 92,
     "upvotes": 155,
     "dateCreated": "01/15/2022",
     "favorited": true,

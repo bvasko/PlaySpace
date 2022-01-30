@@ -22,7 +22,7 @@
         </div>
         <div class="card-action .left-align">
             <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
-            <a href="#"><i class="material-icons">comment</i> {{comments}}</a>
+            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
             <!-- Modal Trigger -->
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">See More</a>
             <!-- Modal Structure -->
@@ -30,7 +30,10 @@
                 <div class="modal-content">
                 <h4>{{name}}</h4>
                 <h5>Upvotes: {{upvotes}}</h5>
-                <h5>Comments: {{comments}}</h5>
+                <h5>Comments: {{user_comments}}</h5>
+                {{#each comments as |comment|}}
+                     {{>comment-details}}
+                {{/each}}
                 </div>
                 <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
