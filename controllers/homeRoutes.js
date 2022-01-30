@@ -163,6 +163,7 @@ router.get('/callback', function(req, res) {
 
 /** Get the users first 20 spotify playlists **/
 router.get('/spotify-playlists', async function(req, res) {
+  const user_id = req.session.user_id;
   try {
     const token = req.query.access_token;
     const data = await fetch(PLAYLIST_URL, {
@@ -171,9 +172,21 @@ router.get('/spotify-playlists', async function(req, res) {
         'Authorization': `Bearer ${req.query.access_token}`,
       },
     });
-    const usersPlaylists = await data.json();
-    const playlistData = await usersPlaylists.items.map(item => {
-      console.log(item)
+    const usersSpotifyPlaylists = await data.json();
+    const playspaceData = await Playlist.findAll({
+      where: {user_id},
+      attributes: ['id', 'spotify_id']
+    });
+    if (usersSpotifyPlaylists === undefined) {
+      res.redirect('/spotify-login');
+    }
+    const playspaceArr = playspaceData !== undefined ?
+      playspaceData.map(item => item.get({plain: true})) :
+      [];
+    const playlistData = usersSpotifyPlaylists.items.map(item => {
+      const playspacePlaylist = (playspaceArr.length !== 0) ?
+        playspaceArr.find(ps_list => ps_list.spotify_id === item.id) :
+        false;
       return {
         description: item.description,
         name: item.name,
@@ -182,10 +195,10 @@ router.get('/spotify-playlists', async function(req, res) {
         image: item.images[0]?.url || '',
         ownerName: item.owner.display_name,
         ownerId: item.owner.id,
-        public: item.public
+        public: item.public,
+        psPlaylistId: playspacePlaylist?.id || null
       }
     })
-    // res.status(200).json(playlistData)
     res.render('spotifyPlaylist', {
       playlists: playlistData,
       logged_in: req.session.logged_in
