@@ -4,9 +4,14 @@
   padding: 0 3em;
 }
 
+
 .spotify.card {
   position: relative;
   width: 30%;
+}
+
+.card-image {
+  max-height: 100% !important;
 }
 
 .spotify.card .card-title {

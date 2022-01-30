@@ -89,7 +89,6 @@ router.get('/playlist', withAuth, async (req, res) => {
   try {
     const playlistData = await Playlist.findAll({ include: [{ model: User }] });
     const playlist = playlistData.map(playlist => playlist.get({ plain: true }));
-    console.log(playlist)
     res.status(200).json(playlist)
   } catch (err) {
     console.log(err);
