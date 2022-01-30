@@ -1,9 +1,26 @@
 .container.container-fluid {
   background-color: #FFF;
   width: 100%;
-  padding: 0 3em;
+  padding: 24px 3em;
 }
 
+.user_name {
+  color: var(--tertiary);
+}
+
+#spotify-title {
+  width: 60%;
+}
+
+.spotify-container {
+  position: relative;
+}
+
+.spotify-done {
+  right: 0;
+  top: 2.6rem;
+  position: absolute;
+}
 
 .spotify.card {
   position: relative;
@@ -81,13 +98,18 @@
 }
 
 .spotify.card .button .btn-floating.add {
-  background-color: #00c853;
+  background-color: #B6E852;
+}
+.spotify.card .button .btn-floating.add i {
+  color: #080124;
 }
 .spotify.card .button .btn-floating.remove {
-background-color: #F44336;
+background-color: #E8429B;
 }
-
+.spotify.card .button .btn-floating:hover i {
+  color: white;
+}
 .spotify.card .button .btn-floating:hover {
-  background-color: rgba(0,0,0, 1.0);
+  background-color: rgba(6,14, 54, 1.0);
   transition: all .2;
 }
