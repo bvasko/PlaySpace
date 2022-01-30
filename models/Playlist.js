@@ -15,7 +15,7 @@ Playlist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comments: {
+    user_comments: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -41,6 +41,10 @@ Playlist.init(
     spotify_id: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    img_url: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   },
   {
@@ -48,7 +52,7 @@ Playlist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Playlist',
+    modelName: 'playlist',
   }
 );
 

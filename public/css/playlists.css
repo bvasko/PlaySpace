@@ -4,9 +4,14 @@
   padding: 0 3em;
 }
 
+
 .spotify.card {
   position: relative;
   width: 30%;
+}
+
+.card-image {
+  max-height: 100% !important;
 }
 
 .spotify.card .card-title {
@@ -54,7 +59,7 @@
 }
 
 .spotify.card .button .btn-floating {
-  background-color: #F44336;
+  background-color: #00c853;
 }
 
 .spotify.card .button .btn-floating:hover {

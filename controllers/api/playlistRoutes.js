@@ -1,6 +1,32 @@
 const router = require('express').Router();
-const { Playlist } = require('../../models');
+const { Playlist, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+
+router.get('/', withAuth, async (req, res) => {
+  try {
+    // Get all playlists and JOIN with user data
+    const playlistData = await Playlist.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Comment,
+          attributes: ['id','content', 'user_id'],
+        }
+      ],
+    });
+    res.status(200).json(playlistData);
+    // Serialize data so the template can read it
+    // const playlists = playlistData.map((playlist) => playlist.get({ plain: true }));
+    // res.status(200).json(playlists);
+  
+  } catch(err){
+    res.status(500).json(err);
+  }
+})
 
 router.post('/', withAuth, async (req, res) => {
   try {
