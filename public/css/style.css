@@ -56,12 +56,16 @@
     
   }
 
-  #logout2, #eject-icon, #logout-li{
+  #logout2, #eject-icon, #music-icon, #logout-li, #profile-btn, #profile-btn-link, #profile-li{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
  .card-title {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
   }

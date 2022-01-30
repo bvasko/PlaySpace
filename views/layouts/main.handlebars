@@ -6,11 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlaySpace</title>
   <link rel="stylesheet" href="/css/jass.css">
-  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&family=Sintony:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet"> 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/playlists.css">
 </head>
 
 <body style>
@@ -26,25 +29,45 @@
               <button class="waves-effect waves-light btn" id="profile"><li><a href="/profile">Profile</a></li></button>
               <button class="waves-effect waves-light btn" id="logout">Log Out</button> 
             </ul>
-            <ul id="slide-out" class="sidenav">
-              <li>
-                <div class="user-view">
-                  <div class="background">
-                    <img src="images/office.jpg">
+          {{!-- side navigation bar --}}
+              <ul id="slide-out" class="sidenav">
+                <li>
+                  <div class="user-view">
+                    <div class="background">
+                      <img src="./assets/images/record.jpg" style='height: 200px;' alt='vinyl record'>
+                    </div>
+                    <br>
+                  {{!-- // TODO: LINK SPOTIFY AND USER NAME --}}
+                  <a href="#name"><span class="white-text name">user name here</span></a>
+                  <a href="#email"><span class="white-text email">my spotify</span></a>
                   </div>
-                <a href="#user"><img class="circle" src=""></a>
-                <a href="#name"><span class="black-text name">user name here</span></a>
-                <a href="#email"><span class="black-text email">spotify account link</span></a>
-                </div>
-              </li>
-              <li><a href="/profile"><i class="material-icons">music_note</i>My Profile</a></li>
-              <li id="logout-li"><button class="waves-effect waves-light btn" id='logout2'><i class='material-icons' id="eject-icon">eject</i>logout</button></li>
-              <li><div class="divider"></div></li>
-              <li><a class="subheader">Subheader</a></li>
-              <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            </ul>
+                </li>
+                
+                <li>
+                  <div class="divider"></div>
+                </li>
+                {{!-- profile button --}}
+                <li id="profile-li">
+                  <button class="waves-effect waves-light btn" id="profile-btn">
+                    <a href="/profile" id="profile-btn-link">
+                      <i class="material-icons" id="music-icon">music_note</i>
+                      My Profile
+                    </a>
+                  </button>
+                </li>
+                {{!-- log out button --}}
+                <li id="logout-li">
+                  <button class="waves-effect waves-light btn" id='logout2'>
+                    <i class='material-icons' id="eject-icon">eject</i>
+                    logout
+                  </button>
+                </li
+          
+                <li><a class="subheader">Subheader</a></li>
+              </ul>
             <a href="#" data-target="slide-out" class="btn sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>  
+
         </div>
       </div>
     </nav>
