@@ -69,3 +69,10 @@
   h1, h2, h3, h4 {
     font-family: 'Raleway', sans-serif;
   }
+
+  .right {
+    position: absolute;
+    z-index: 3;
+    right: 18px;
+    top: 15px;
+  }
