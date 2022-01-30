@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Playlist, User } = require('../../models');
+const { Playlist, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -12,11 +12,16 @@ router.get('/', withAuth, async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          attributes: ['id','content', 'user_id'],
+        }
       ],
     });
+    res.status(200).json(playlistData);
     // Serialize data so the template can read it
-    const playlists = playlistData.map((playlist) => playlist.get({ plain: true }));
-    res.status(200).json(playlists);
+    // const playlists = playlistData.map((playlist) => playlist.get({ plain: true }));
+    // res.status(200).json(playlists);
   
   } catch(err){
     res.status(500).json(err);

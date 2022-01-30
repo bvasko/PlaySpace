@@ -1,0 +1,47 @@
+[
+  {
+    "content": "I love this playlist!",
+    "user_id": 1,
+    "playlist_id": 1
+  },
+  {
+    "content": "I love this!",
+    "user_id": 2,
+    "playlist_id": 1
+  },
+  {
+    "content": "This playlist!",
+    "user_id": 3,
+    "playlist_id": 1
+  },
+  {
+    "content": "I love this workout playlist!",
+    "user_id": 1,
+    "playlist_id": 2
+  },
+  {
+    "content": "Workout to this playlist!",
+    "user_id": 2,
+    "playlist_id": 2
+  },
+  {
+    "content": "This workout playlist!",
+    "user_id": 3,
+    "playlist_id": 2
+  },
+  {
+    "content": "I can't stand this playlist!",
+    "user_id": 1,
+    "playlist_id": 3
+  },
+  {
+    "content": "What is this playlist?",
+    "user_id": 2,
+    "playlist_id": 3
+  },
+  {
+    "content": "No!",
+    "user_id": 3,
+    "playlist_id": 3
+  }
+]
