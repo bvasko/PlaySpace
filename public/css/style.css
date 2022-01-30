@@ -55,8 +55,13 @@
     height: 60px;
     
   }
+
   #logout2, #eject-icon, #logout-li{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+ .card-title {
+    font-family: 'Heebo', sans-serif;
   }
