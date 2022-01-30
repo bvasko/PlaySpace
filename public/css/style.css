@@ -52,3 +52,7 @@
     height: 60px;
     
   }
+
+ .card-title {
+    font-family: 'Heebo', sans-serif;
+  }
