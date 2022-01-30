@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Playlist, Comment } = require('../../models');
+const { Playlist, Comment, User } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const commentData = await Comment.findAll({ include: { model: Playlist } });
+    const commentData = await Comment.findAll({ include: { model: Playlist, User } });
     const comments = commentData.map(comment => comment.get({ plain: true }));
     console.log(comments)
     res.status(200).json(comments)
