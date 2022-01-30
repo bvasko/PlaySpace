@@ -5,10 +5,11 @@
 </div>
 <div class="spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
-    <div class="spotify card medium">
+    <div class="spotify card medium playlist-card">
+        <p style="visibility: hidden;" id="playlist-id">{{id}}</p>
         <span class="card-title">
             <h5>PLAYLIST</h5>
-            {{name}}</h3>
+            <h3>{{name}}</h3>
         </span>
         <div class="right">
             {{#if favorited}}
@@ -23,7 +24,27 @@
         <div class="card-action .left-align">
             <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
             <a href="#"><i class="material-icons">comment</i> {{comments}}</a>
+            <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>{{name}}</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(modal);
+      });
+</script>
         </div>
     </div>
     {{/each}}
 </div>
+<script src="/js/modal.js"></script>
