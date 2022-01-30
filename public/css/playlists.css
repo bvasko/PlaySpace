@@ -11,17 +11,17 @@
 }
 
 .card-image {
-  max-height: 100% !important;
+  max-height: 70% !important;
 }
 
 .spotify.card .card-title {
   background: rgb(255,255,255);
-  background: linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 64%, rgba(255,255,255,1) 90%);
   display: block;
   position: absolute;
   z-index: 1;
   top: 0px;
-  font-size: 110%;
+  font-size: 120%;
   width: 100%;
   padding: 22px 0px 35px 24px;
   font-family: 'Raleway', sans-serif;
@@ -48,6 +48,24 @@
 
 .spotify.card .card-content {
   position: relative;
+}
+
+.spotify.card .card-content .track-count {
+  background-color: #C9F374;
+  color: #080124;
+  display: inline-block;
+  font-family: 'Source sans pro';
+  font-size: 70%;
+  padding: 3px;
+}
+
+.spotify.card .card-content p {
+  position: relative;
+  margin: 0px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 .spotify.card .button {
