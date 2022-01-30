@@ -9,4 +9,6 @@
   *
   */
 
-//  $('.spotify-add');
+$('document').on('click','.spotifyList', function(evt) {
+  console.log(evt.target);
+});
