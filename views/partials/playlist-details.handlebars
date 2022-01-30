@@ -2,7 +2,8 @@
 <div class="card medium">
   <div class="card-image">
     <img src="{{image}}" />
-    <span class="card-title"><i class="material-icons">playlist_play</i> {{name}}</span>
+    <span class="card-title"><i class="material-icons">playlist_play</i>
+      {{name}}</span>
     <div class="right">
       {{#if favorited}}
         <a href="#"><i class="material-icons">star</i></a>
@@ -17,5 +18,48 @@
   <div class="card-action .left-align">
     <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
     <a href="#"><i class="material-icons">comment</i> {{comments}}</a>
+    <!-- Modal Trigger -->
+    <button
+      class="waves-effect waves-light btn comment-modal-trigger"
+      data-target="modal1"
+    >Comment</button>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Add a comment</h4>
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row modal-form-row">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea
+                  id="image_description"
+                  type="text"
+                  class="materialize-textarea validate"
+                ></textarea>
+                <label for="image_description">What do you think?</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </div>
   </div>
+
+  <body>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"
+    ></script>
+  </body>
 </div>
