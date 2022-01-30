@@ -1,14 +1,26 @@
+{{!-- welcome message after sign in --}}
 <div class='card-header col-md-10'>
     <h3>
         Welcome to PlaySpace
     </h3>
+    
 </div>
+
+{{!-- parallax image --}}
+<div class="parallax-container">
+      <div class="parallax">
+        <img src="/public/assets/images/backgroundWithLogo.png" style="transform: translate3d(-50%, 612.772px, 0px); opacity: 1;">
+      </div>
+</div>
+
+
+{{!-- displays spotify playlists --}}
 <div class="spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
     <div class="spotify card medium">
         <span class="card-title">
             <h5>PLAYLIST</h5>
-            {{name}}</h3>
+            <h3>{{name}}</h3>
         </span>
         <div class="right">
             {{#if favorited}}
@@ -18,7 +30,7 @@
             {{/if}}
         </div>
         <div class="card-image">
-            <image src="{{img_url}}" />
+            <image src="{{img_url}}"/>
         </div>
         <div class="card-action .left-align">
             <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
@@ -29,9 +41,9 @@
             <div id="modal1" class="modal">
                 <div class="modal-content">
                 <h4>{{name}}</h4>
-                <h5>Upvotes: {{upvotes}}</h5>
-                <h5>Comments: {{user_comments}}</h5>
-                {{#each comments as |comment|}}
+                    <h5>Upvotes: {{upvotes}}</h5>
+                    <h5>Comments: {{user_comments}}</h5>
+                    {{#each comments as |comment|}}
                      {{>comment-details}}
                 {{/each}}
                 </div>
@@ -43,9 +55,19 @@
                 </div>
     {{/each}}
 </div>
+
+{{!-- initializes modal --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var modal = document.querySelectorAll('.modal');
     var instances = M.Modal.init(modal);
+  });
+</script>
+
+{{!-- initializes parallax --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
   });
 </script>
