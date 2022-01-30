@@ -18,16 +18,6 @@
     justify-content: flex-start;
     background-color: var(--quatrinary);
   }
-
-  header, main, footer {
-    padding-left: 300px;
-  }
-
-  @media only screen and (max-width : 992px) {
-    header, main, footer {
-      padding-left: 0;
-    }
-  }
   
   header {
     text-align: center;
@@ -64,4 +54,9 @@
     top: 2px;
     height: 60px;
     
+  }
+  #logout2, #eject-icon, #logout-li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
