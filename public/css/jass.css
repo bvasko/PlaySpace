@@ -421,13 +421,13 @@
   }
   
   a {
-    color: #1b89bc;
+    /* color: #1b89bc; this gets overwritten by materialize */
     text-decoration: none;
   }
   
   a:hover {
-    color: #065b83;
-    text-decoration: underline;
+    color: #080124;
+    /* text-decoration: underline; */
   }
   
   /* HEIGHT / WIDTH UTILS */

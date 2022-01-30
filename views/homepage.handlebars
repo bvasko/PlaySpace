@@ -1,7 +1,7 @@
 {{!-- welcome message after sign in --}}
 <div class='card-header col-md-10'>
     <h3>
-        Welcome to PlaySpace
+        Welcome <span class="user_name">{{user_name}}</span> to PlaySpace
     </h3>
     
 </div>
@@ -20,7 +20,8 @@
     <div class="spotify card medium">
         <span class="card-title">
             <h5>PLAYLIST</h5>
-            <h3>{{name}}</h3>
+            {{name}}</h3>
+            <h5>Created by: {{playlist.user.name}}</h5>
         </span>
         <div class="right">
             {{#if favorited}}
