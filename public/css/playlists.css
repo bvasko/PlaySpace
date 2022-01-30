@@ -4,12 +4,12 @@
   padding: 0 3em;
 }
 
-.card {
+.spotify.card {
   position: relative;
   width: 30%;
 }
 
-.card-title {
+.spotify.card .card-title {
   background: rgb(255,255,255);
   background: linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
   display: block;
@@ -27,7 +27,7 @@
 
 
 
-.card-title h5 {
+.spotify.card .card-title h5 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 60%;
@@ -38,11 +38,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  flex: 0 0 33.333333%;
   justify-content: space-between;
 }
 
-.card-content {
+.spotify.card .card-content {
   position: relative;
 }
 

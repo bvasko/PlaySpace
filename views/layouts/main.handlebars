@@ -17,73 +17,72 @@
 </head>
 
 <body style>
+  {{#if logged_in}}
+  {{!-- header with logo display and dynamic button links / hidden side navigation --}}
   <header class='display-flex justify-space-between align-center'>
     <nav>
       <div class='container'>
         <div class='nav-wrapper'>
-          <a href='/' class='brand-logo right'>PlaySpace</a>
+          <a href='/' class='brand-logo right'><img src="assets/images/playspace_logo_sm.png" alt="PlaySpace Logo" id="playspace-logo"></a>
           <div class='row'>
             <ul class="left hide-on-med-and-down">
-                    {{#if logged_in}}
-                      <button class="waves-effect waves-light btn" id="profile"><li><a href="/profile">Profile</a></li></button>
-                      <button class="waves-effect waves-light btn" id="logout">Log Out</button>
-                      {{else}}
-                      <button class="waves-effect waves-light btn"><li><a href="/login">Log In</a></li></button>
-                    {{/if}}
-              </ul>
+              <button class="waves-effect waves-light btn" id="profile"><li><a href="/profile">Profile</a></li></button>
+              <button class="waves-effect waves-light btn" id="logout">Log Out</button> 
+            </ul>
+            <ul id="slide-out" class="sidenav">
+              <li>
+                <div class="user-view">
+                  <div class="background">
+                    <img src="images/office.jpg">
+                  </div>
+                <a href="#user"><img class="circle" src=""></a>
+                <a href="#name"><span class="black-text name">user name here</span></a>
+                <a href="#email"><span class="black-text email">spotify account link</span></a>
+                </div>
+              </li>
+              <li><a href="/profile"><i class="material-icons">music_note</i>My Profile</a></li>
+              <li id="logout-li"><button class="waves-effect waves-light btn" id='logout2'><i class='material-icons' id="eject-icon">eject</i>logout</button></li>
+              <li><div class="divider"></div></li>
+              <li><a class="subheader">Subheader</a></li>
+              <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="btn sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>  
         </div>
       </div>
     </nav>
-  
-  
   </header>
-  {{!-- <div class='container'>
+  {{else}}
+    <header class='display-flex justify-space-between align-center'>
+      <nav>
+        <div class='container'>
+          <div class='nav-wrapper'>
+            <a href='/' class='brand-logo right'><img src="assets/images/playspace_logo_sm.png" alt="PlaySpace Logo" id="playspace-logo"></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  {{/if}}
 
 
-              <div class="col s12 justify-space-around">
-                <header class="display-flex justify-space-between align-center p-2">
-                    <nav>
-                      <div class="nav-wrapper">
-                        <a href="/homepage" class="brand-logo right">PlaySpace</a>
-                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                        <ul class="left hide-on-med-and-down">
-                          {{#if logged_in}}
-                              <button class="waves-effect waves-light btn" id="profile"><li><a href="/profile">Profile</a></li></button>
-                              <button class="waves-effect waves-light btn" id="logout">Log Out</button>
-                              {{else}}
-                                <button class="waves-effect waves-light btn"><li><a href="/login">Log In</a></li></button>
-                          {{/if}}
-                        </ul>
-                      </div>
-                    </nav>
-                    
-                    {{!-- {{#if logged_in}} --}}
-                      {{!-- <ul class="sidenav" id="mobile-demo">
-                          <li><a href="/profile" id='profile'>profile</a></li>
-                          <li><a href='/' id='logout'>logout</li>
-                          {{!-- {{else}} --}}
-                      {{!-- </ul>
-                    {{/if}} --}}
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+    </main>
+    <footer></footer>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        var side=document.querySelectorAll('.sidenav');
+        M.Sidenav.init(side)
+      });
+    </script>
 
-                {{!-- </header> --}}
-                <main class="container container-fluid mt-5">
-                  <!-- Render the sub layout -->
-                  {{{ body }}}
-                </main>
-                <footer>
-                  
-                </footer>
-              </div>
-
-              <!-- Render script for logged in users only -->
-              {{#if logged_in}}
-              <script src="/js/logout.js"></script>
-              <script src='/js/index.js'></script>
-              {{/if}}
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <scirpt src='https://code.jquery.com/jquery-3.2.1.min.js'></scirpt>
   </div>
 </body>
 </html>
