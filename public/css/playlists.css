@@ -14,6 +14,10 @@
   max-height: 70% !important;
 }
 
+.spotify.card .card-image img {
+  opacity: .75;
+}
+
 .spotify.card .card-title {
   background: rgb(255,255,255);
   background: linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 64%, rgba(255,255,255,1) 90%);
@@ -21,7 +25,7 @@
   position: absolute;
   z-index: 1;
   top: 0px;
-  font-size: 120%;
+  font-size: 180%;
   width: 100%;
   padding: 22px 0px 35px 24px;
   font-family: 'Raleway', sans-serif;
@@ -76,8 +80,11 @@
   right: 14px;
 }
 
-.spotify.card .button .btn-floating {
+.spotify.card .button .btn-floating.add {
   background-color: #00c853;
+}
+.spotify.card .button .btn-floating.remove {
+background-color: #F44336;
 }
 
 .spotify.card .button .btn-floating:hover {

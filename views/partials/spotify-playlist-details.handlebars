@@ -13,11 +13,11 @@
   </div>
     {{#if psPlaylistId}}
       <div data-id="{{id}}" data-playspaceid="{{psPlaylistId}}" data-name="{{name}}" data-img_url="{{image}}" class="spotifyListRemove button">
-          <a class="btn-floating red"><i class="material-icons">remove</i></a>
+          <a class="btn-floating remove"><i class="material-icons">remove</i></a>
       </div>
     {{else}}
       <div data-id="{{id}}" data-name="{{name}}" data-img_url="{{image}}" class="spotifyListAdd button">
-          <a class="btn-floating"><i class="material-icons">add</i></a>
+          <a class="btn-floating add"><i class="material-icons">add</i></a>
       </div>
     {{/if}}
   <div class="card-content">
