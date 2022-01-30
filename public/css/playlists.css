@@ -1,0 +1,63 @@
+.container.container-fluid {
+  background-color: #FFF;
+  width: 100%;
+  padding: 0 3em;
+}
+
+.spotify.card {
+  position: relative;
+  width: 30%;
+}
+
+.spotify.card .card-title {
+  background: rgb(255,255,255);
+  background: linear-gradient(360deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  font-size: 110%;
+  width: 100%;
+  padding: 22px 0px 35px 24px;
+  font-family: 'Raleway', sans-serif;
+  max-height: 1000px;
+  overflow: hidden;
+  font-weight: 600 !important;
+}
+
+
+
+.spotify.card .card-title h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 60%;
+  margin: 0px 0px 5px 0px;
+}
+
+.spotify-playlist-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.spotify.card .card-content {
+  position: relative;
+}
+
+.spotify.card .button {
+  background-color: rgba(0,0,0, .0);
+  position: absolute;
+  z-index: 12;
+  top: 20px;
+  right: 14px;
+}
+
+.spotify.card .button .btn-floating {
+  background-color: #F44336;
+}
+
+.spotify.card .button .btn-floating:hover {
+  background-color: rgba(0,0,0, 1.0);
+  transition: all .2;
+}

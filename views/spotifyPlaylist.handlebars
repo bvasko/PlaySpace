@@ -1,6 +1,9 @@
+<div class="spotify-container">
+  <H4>Select the playlists you want to share:</H4>
 
-<H3>Select the playlists you want to share:</H3>
-
-{{#each playlists as |playlist|}}
-{{>spotify-playlist-details}}
-{{/each}}
+  <div class="spotify-playlist-wrapper">
+  {{#each playlists as |playlist|}}
+    {{>spotify-playlist-details}}
+  {{/each}}
+  </div>
+</div>
