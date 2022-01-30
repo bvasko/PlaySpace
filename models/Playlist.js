@@ -15,7 +15,7 @@ Playlist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comments: {
+    user_comments: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -52,7 +52,7 @@ Playlist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Playlist',
+    modelName: 'playlist',
   }
 );
 

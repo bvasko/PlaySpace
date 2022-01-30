@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Playlist } = require('../models');
+const { User, Playlist, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const request = require('request');
 const querystring = require('querystring');
@@ -16,6 +16,10 @@ router.get('/', withAuth, async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          attributes: ['id', 'content']
+        }
       ],
     });
 
