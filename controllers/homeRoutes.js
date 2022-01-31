@@ -67,6 +67,7 @@ router.get('/profile', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Playlist }],
+      limit: 30,
     });
 
     const user = userData.get({ plain: true });
