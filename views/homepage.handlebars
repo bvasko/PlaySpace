@@ -1,37 +1,44 @@
+{{!-- welcome message after sign in --}}
 <div class='card-header col-md-10'>
     <h3>
-        Welcome to PlaySpace
+        Welcome <span class="user_name">{{user_name}}</span> to PlaySpace
     </h3>
+    
 </div>
+
+{{!-- displays spotify playlists --}}
 <div class="spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
     <div class="spotify card medium">
         <span class="card-title">
+<<<<<<< HEAD
             <h5>PLAYLIST </h5>
             {{name}}</h3>
+=======
+            <h5>PLAYLIST</h5>
+            <a class="detail-link" href="/playlist/{{playlist.id}}">{{name}}</a>
+>>>>>>> a0cefc8ef3f40e1b33331c0dd65dceba406e82db
             <h5>Created by: {{playlist.user.name}}</h5>
         </span>
         <div class="right">
-            {{#if favorited}}
-            <a href="#"><i class="material-icons">star</i></a>
-            {{else}}
-            <a href="#"><i class="material-icons">star_border</i></a>
-            {{/if}}
+            <a href="#"><i class="material-icons icon-blue">star_border</i></a>
         </div>
-        <div class="card-image">
-            <image src="{{img_url}}" />
+        <div style="background-image: url({{img_url}})" class="card-image">
         </div>
         <div class="card-action .left-align">
-            <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
-            <a href="#modal{{playlist.id}}" class="modal-trigger"><i class="material-icons">comment</i> {{user_comments}}</a>
+            <div>
+                <a href="#" data-id='{{playlist.id}}' data-update='{{upvotes}}' class="upvote"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+                <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+            </div>
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light modal-trigger" href="#modal1">Comment</a>
             <!-- Modal Structure -->
             <div id="modal{{playlist.id}}" class="modal">
                 <div class="modal-content">
                 <h4>{{name}}</h4>
-                <h5>Upvotes: {{upvotes}}</h5>
-                <h5>Comments: {{user_comments}}</h5>
-                <p>
-                {{#each comments}}
+                    <h5 >Upvotes: {{upvotes}}</h5>
+                    <h5>Comments: {{user_comments}}</h5>
+                    {{#each comments as |comment|}}
                      {{>comment-details}}
                 {{/each}}
                 <button class="waves-effect waves-light btn modal-trigger comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right comment-button" data-target="modalX{{playlist.id}}"><i class="material-icons">comment</i></button>
@@ -71,6 +78,8 @@
                 </div>
     {{/each}}
 </div>
+
+{{!-- initializes modal --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var modal = document.querySelectorAll('.modal');
@@ -78,3 +87,7 @@
   });
 </script>
 <script src="/js/comments.js"></script>
+
+<script src='./js/upvotes.js'></script>
+
+
