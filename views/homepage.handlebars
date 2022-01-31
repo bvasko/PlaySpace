@@ -1,4 +1,5 @@
 {{!-- welcome message after sign in --}}
+<div class="row">
 <div class='card-header col-md-10'>
     <h3>
         Welcome <span class="user_name">{{user_name}}</span> to PlaySpace
@@ -7,7 +8,7 @@
 </div>
 
 {{!-- displays spotify playlists --}}
-<div class="spotify-playlist-wrapper">
+<div class="col s12 spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
     <div class="spotify card medium">
         <span class="card-title">
@@ -45,7 +46,7 @@
                 </div>
     {{/each}}
 </div>
-
+</div>
 {{!-- initializes modal --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
