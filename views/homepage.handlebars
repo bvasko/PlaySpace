@@ -33,7 +33,7 @@
                 <div class="modal-content">
                 <h4>{{name}}</h4>
                     <h5 >Upvotes: {{upvotes}}</h5>
-                    <h5>Comments: {{user_comments}}</h5>
+                    <h5>Comments: {{comments.length}}</h5>
                     {{#each comments as |comment|}}
                      {{>comment-details}}
                 {{/each}}
