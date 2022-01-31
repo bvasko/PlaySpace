@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
     const comments = commentData.map(comment => comment.get({ plain: true }));
     console.log(comments)
     res.status(200).json(comments)
+    res.render
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

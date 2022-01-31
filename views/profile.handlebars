@@ -29,45 +29,43 @@
             <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
             <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
             <!-- Modal Trigger -->
-   <!-- <button
-      class="waves-effect waves-light btn comment-modal-trigger"
-      data-target="modal1"
-    >Comment</button> -->
-<button class="waves-effect waves-light btn comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right" data-target="modal1"><i class="material-icons">comment</i></a>
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <h4>Add a comment</h4>
-
-        <div class="row">
-          <form class="col s12">
-            <div class="row modal-form-row">
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea
-                  id="image_description"
-                  type="text"
-                  class="materialize-textarea validate"
-                ></textarea>
-                <label for="image_description">What do you think?</label>
-              </div>
+            <!-- <button
+            class="waves-effect waves-light btn comment-modal-trigger"
+            data-target="modal1"
+            >Comment</button> -->
+        <button class="waves-effect waves-light btn comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right comment-button" data-target="modal1"><i class="material-icons">comment</i></a>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Add a comment</h4>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row modal-form-row">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea
+                                            id="image_description"
+                                            type="text"
+                                            class="materialize-textarea validate"
+                                        ></textarea>
+                                        <label for="image_description">What do you think?</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-action modal-close waves-effect waves-green btn-flat comment-submit">Submit</a>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a class="modal-action modal-close waves-effect waves-green btn-flat comment-submit">Submit</a>
-      </div>
     </div>
-  </div>
+</div>
+</div>
+{{/each}}
+</div>
+</div>
 
-  <body>
-                    </div>
-                </div>
-                </div>
-    {{/each}}
-    </div>
-    </div>
 {{!-- <div class="carousel">
     {{#each playlist}}
     <a class="carousel-item" href="#one!"><img src={{user.playlist.img_url}}></a>
