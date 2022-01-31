@@ -42,7 +42,7 @@
   max-height: 120% !important;
   opacity: .75;
   filter: grayscale(40%) brightness(1.3);
-  background-size: contain;
+  background-size: cover;
 }
 
 .spotify.card:hover .card-image {
@@ -148,9 +148,21 @@ background-color: #E8429B;
 .spotify.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) i {
   font-size: 1.2rem;
 }
-.spotify.card  .material-icons {
+.spotify.card .material-icons {
   vertical-align: text-bottom;
 }
+
+.spotify.card .detail-link {
+  font-size: inherit;
+  color: var(--dark);
+}
+
+.spotify.card .detail-link:hover {
+  font-size: inherit;
+  color: var(--tertiary);
+  transition: color .3s;
+}
+
 #my-playlist {
   display: flex;
   flex-wrap: wrap;
