@@ -1,6 +1,8 @@
 <div class="spotify-container">
-  <H4>Select the playlists you want to share:</H4>
-
+  <H4 id="spotify-title">Select the playlists you want to share:</H4>
+  <div class="spotify-done">
+    <a href="/" class="waves-effect waves-light btn-large">Done</a>
+  </div>
   <div class="spotify-playlist-wrapper">
   {{#each playlists as |playlist|}}
     {{>spotify-playlist-details}}

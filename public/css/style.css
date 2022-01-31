@@ -1,12 +1,16 @@
 :root {
     --primary: #4b917d;
     --secondary: hsl(77, 88%, 68%);
-    --tertiary: #f037a5;
+    --tertiary: #E8429B;
     --quatrinary: #4b917d;
     --light: #ffffff;
-    --dark: #000000;
+    --dark: #080124;
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
+  }
+
+  a, button {
+    border-radius: 1.4rem !important;
   }
   
   body {
