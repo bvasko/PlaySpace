@@ -61,10 +61,14 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-// post route for upvotes / STILL NEEDS WHERE CLAUSE
+// post route for upvotes / STILL NEEDS WHERE CLAUSE UPDATE
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newPlaylist = await Playlist.update({
+    const upvoteUpdate = await Playlist.update({
+      where: {
+        id: req.params.Playlist,
+        user_id: req.session.user_id,
+      }
       ...req.body,
       user_id: req.session.user_id,
     });

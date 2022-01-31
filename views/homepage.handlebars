@@ -21,7 +21,7 @@
     <div class="spotify card medium">
         <span class="card-title">
             <h5>PLAYLIST</h5>
-            {{name}}</h3>
+            <a class="detail-link" href="/playlist/{{playlist.id}}">{{name}}</a>
             <h5>Created by: {{playlist.user.name}}</h5>
         </span>
         <div class="right">
@@ -31,19 +31,20 @@
             <a href="#"><i class="material-icons">star_border</i></a>
             {{/if}}
         </div>
-        <div class="card-image">
-            <image src="{{img_url}}"/>
+        <div style="background-image: url({{img_url}})" class="card-image">
         </div>
         <div class="card-action .left-align">
-            <a href="#"><i class="material-icons">thumb_up</i> <h5 data-upvote="{{upvotes}}"></h5></a>
-            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+            <div>
+                <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+                <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+            </div>
             <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">See More</a>
+            <a class="waves-effect waves-light modal-trigger" href="#modal1">Comment</a>
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
                 <h4>{{name}}</h4>
-                    <h5>Upvotes: {{upvotes}}</h5>
+                    <h5 data-update='{{upvotes}}'>Upvotes: {{upvotes}}</h5>
                     <h5>Comments: {{user_comments}}</h5>
                     {{#each comments as |comment|}}
                      {{>comment-details}}

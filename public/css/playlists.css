@@ -16,23 +16,39 @@
   position: relative;
 }
 
+.spotify-container h4 {
+  font-size: 1.8rem;
+}
+
 .spotify-done {
   right: 0;
-  top: 2.6rem;
+  top: .5rem;
   position: absolute;
 }
 
 .spotify.card {
   position: relative;
-  width: 30%;
+  flex: 1 0 21%;
+  margin-right: 16px;
+  border-radius: 24px;
+  width: 6rem;
+  overflow:hidden;
 }
 
-.card-image {
-  max-height: 70% !important;
-}
-
-.spotify.card .card-image img {
+.spotify.card .card-image {
+  position: absolute;
+  width: 150%;
+  height: 120% !important;
+  max-height: 120% !important;
   opacity: .75;
+  filter: grayscale(40%) brightness(1.3);
+  background-size: cover;
+}
+
+.spotify.card:hover .card-image {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+  transition: ease-in-out all .7s;
 }
 
 .spotify.card .card-title {
@@ -49,9 +65,8 @@
   max-height: 1000px;
   overflow: hidden;
   font-weight: 600 !important;
+  border-radius: 22px 22px 0 0;
 }
-
-
 
 .spotify.card .card-title h5 {
   font-family: 'Source Sans Pro', sans-serif;
@@ -112,4 +127,44 @@ background-color: #E8429B;
 .spotify.card .button .btn-floating:hover {
   background-color: rgba(6,14, 54, 1.0);
   transition: all .2;
+}
+
+.spotify.card .card-action {
+  border-radius: 0px 0px 22px 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spotify.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
+ margin-right: 8px;
+ color: #E8429B;
+ font-size: 1rem;
+}
+.spotify.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+  margin-right: 8px;
+  color: var(--dark);
+  font-size: 1rem;
+ }
+.spotify.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) i {
+  font-size: 1.2rem;
+}
+.spotify.card .material-icons {
+  vertical-align: text-bottom;
+}
+
+.spotify.card .detail-link {
+  font-size: inherit;
+  color: var(--dark);
+}
+
+.spotify.card .detail-link:hover {
+  font-size: inherit;
+  color: var(--tertiary);
+  transition: color .3s;
+}
+
+#my-playlist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
