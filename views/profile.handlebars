@@ -1,0 +1,51 @@
+<div class="row">
+<div class="col">
+<h4>{{name}}</h4>
+<h4>{{email}}</h4>
+</div>
+<div class="col">
+    <h1>My Playlists</h1>
+</div>
+<div class="carousel" style="">
+{{#each playlists as |playlist|}}
+<div class="carousel-item">
+    <div style="width:auto"class="spotify card small">
+        <span class="card-title">
+            <h5>PLAYLIST</h5>
+            {{name}}</h3>
+            <h5>Created by: {{user_id}}</h5>
+        </span>
+        <div class="right">
+            {{#if favorited}}
+            <a href="#"><i class="material-icons">star</i></a>
+            {{else}}
+            <a href="#"><i class="material-icons">star_border</i></a>
+            {{/if}}
+        </div>
+        <div class="card-image">
+            <image src="{{img_url}}" />
+        </div>
+        <div class="card-action .left-align">
+            <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+                    </div>
+                </div>
+                </div>
+    {{/each}}
+    </div>
+    </div>
+{{!-- <div class="carousel">
+    {{#each playlist}}
+    <a class="carousel-item" href="#one!"><img src={{user.playlist.img_url}}></a>
+    {{/each}}
+</div> --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modal);
+  });
+    document.addEventListener('DOMContentLoaded', function() {
+        var carousel = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(carousel);
+      });
+</script>
