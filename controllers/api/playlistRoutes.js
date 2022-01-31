@@ -63,7 +63,6 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 // post route for upvotes / STILL NEEDS WHERE CLAUSE UPDATE
 router.put('/like/:id', withAuth, async (req, res) => {
-  console.log(req.body)
   try {
     const upvoteUpdate = await Playlist.update(req.body,{
       where: {
@@ -71,7 +70,7 @@ router.put('/like/:id', withAuth, async (req, res) => {
       },
     });
 
-    res.status(200).json(upvoteUpdate);
+    res.status(200).json({upvotes: req.body.upvotes});
   } catch (err) {
     res.status(400).json(err);
   }
