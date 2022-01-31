@@ -1,29 +1,29 @@
 // Comment on a playlist
-const commentFormHandler = async (event) => {
-  event.preventDefault();
-
-  const playlist_id = document.querySelectorAll('.post-id');
-  const content = document.querySelector('.comment-content').value.trim();
+$('.comment-form').submit(async function(evt){
+  evt.preventDefault();
+  var content = evt.currentTarget.querySelector('.comment-content').value.trim();
+  const playlist_id = evt.currentTarget.dataset.pid;
+  const user_id = evt.currentTarget.dataset.uid;
   console.log(content);
   console.log(playlist_id);
+  console.log(user_id);
 
-  // const response = await fetch('/api/comments', {
-  //   method: 'POST',
-  //   body: JSON.stringify({
-  //     content,
-  //     playlist_id,
-  //     user_id,
-  //   }),
-  //   headers: { 'Content-Type': 'application/json' },
-  // });
-
-  // if (response.ok) {
-  //   document.location.reload();
-  // } else {
-  //   alert('Comment not added!');
-  // }
+  const response = await fetch('/api/comments', {
+    method: 'POST',
+    body: JSON.stringify({
+      content,
+      playlist_id,
+      user_id,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert('Comment not added!');
+  }
   document.querySelectorAll('.comment-content').forEach(textArea => textArea.value = '');
-};
+});
 
 (function($){
   $.fn.leanModal = function(options) {
@@ -42,7 +42,4 @@ const commentFormHandler = async (event) => {
   };
 })(jQuery);
 
-document
-  .querySelectorAll('.comment-submit').forEach(commentSubmit => commentSubmit.addEventListener('click', commentFormHandler));
-  
 
