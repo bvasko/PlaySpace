@@ -24,11 +24,14 @@
 
 .spotify.card {
   position: relative;
-  width: 30%;
+  flex: 1 0 21%;
+  margin-right: 16px;
+  border-radius: 24px;
 }
 
 .card-image {
   max-height: 70% !important;
+  border-radius: 22px 22px 0px 0px;
 }
 
 .spotify.card .card-image img {
@@ -49,6 +52,7 @@
   max-height: 1000px;
   overflow: hidden;
   font-weight: 600 !important;
+  border-radius: inherit;
 }
 
 
@@ -112,4 +116,14 @@ background-color: #E8429B;
 .spotify.card .button .btn-floating:hover {
   background-color: rgba(6,14, 54, 1.0);
   transition: all .2;
+}
+
+.spotify.card .card-action {
+  border-radius: 0px 0px 22px 22px;
+}
+
+#my-playlist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }

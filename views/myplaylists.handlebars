@@ -1,0 +1,39 @@
+<div class="spotify-container">
+  <H4 id="spotify-title">Your Playlists:</H4>
+  <div style="top: 0px" class="spotify-done">
+    <a href="/" class="waves-effect waves-light btn-large">Done</a>
+  </div>
+  <div class="spotify-playlist-wrapper">
+  {{#each playlists as |playlist|}}
+    <div style="width:auto"class="spotify card small">
+        <span class="card-title">
+            <h5>PLAYLIST</h5>
+            {{name}}</h3>
+            <h5>Created by: {{user_id}}</h5>
+        </span>
+        <div class="right">
+            {{#if favorited}}
+            <a href="#"><i class="material-icons">star</i></a>
+            {{else}}
+            <a href="#"><i class="material-icons">star_border</i></a>
+            {{/if}}
+        </div>
+        <div class="card-image">
+            <image src="{{img_url}}" />
+        </div>
+        <div class="card-action .left-align">
+            <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+        </div>
+    </div>
+
+
+  {{/each}}
+  </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modal);
+  });
+</script>
