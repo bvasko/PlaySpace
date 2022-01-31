@@ -1,0 +1,31 @@
+ <div id="modal{{playlist.id}}" class="modal">
+                            <div class="modal-content">
+                                <h4>Add a comment</h4>
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div class="row modal-form-row">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <textarea
+                                                            id="image_description"
+                                                            type="text"
+                                                            class="materialize-textarea validate comment-content"
+                                                        ></textarea>
+                                                        <label for="image_description">What do you think?</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="modal-action modal-close waves-effect waves-green btn-flat comment-submit">Submit</a>
+                            </div>
+                        </div>
+                        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modal);
+  });
+</script>
+<script src="/js/comments.js"></script>

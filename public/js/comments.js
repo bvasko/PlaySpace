@@ -22,6 +22,7 @@ const commentFormHandler = async (event) => {
   // } else {
   //   alert('Comment not added!');
   // }
+  document.querySelector('.comment-content').value = '';
 };
 
 (function($){
@@ -44,3 +45,4 @@ const commentFormHandler = async (event) => {
 document
   .querySelector('.comment-submit')
   .addEventListener('click', commentFormHandler);
+
