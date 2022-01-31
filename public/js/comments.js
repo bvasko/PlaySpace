@@ -21,9 +21,8 @@ const commentFormHandler = async (event) => {
     alert('Comment not added!');
   }
 };
-
 $(document).ready(function(){
-  $('.comment-modal-trigger').leanModal();
+ $('.comment-modal-trigger').leanModal();
 });
 
 document
