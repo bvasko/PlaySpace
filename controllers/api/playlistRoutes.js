@@ -62,19 +62,16 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // post route for upvotes / STILL NEEDS WHERE CLAUSE UPDATE
-router.post('/like/:id', withAuth, async (req, res) => {
+router.put('/like/:id', withAuth, async (req, res) => {
   console.log(req.body)
   try {
-    const upvoteUpdate = await Playlist.update({
+    const upvoteUpdate = await Playlist.update(req.body,{
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
-      upvotes: req.body.upvotes,
-      user_id: req.session.user_id,
     });
 
-    // res.status(200).json(newPlaylist);
+    res.status(200).json(upvoteUpdate);
   } catch (err) {
     res.status(400).json(err);
   }
