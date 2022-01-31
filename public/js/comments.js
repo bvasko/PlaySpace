@@ -2,24 +2,26 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  const playlist_id = document.querySelector('#post-id').innerHTML;
-  const content = document.querySelector('#comment_content').value.trim();
+  const playlist_id = document.querySelector('.post-id').innerHTML;
+  const content = document.querySelector('.comment-content').value.trim();
+  console.log(content);
+  console.log(playlist_id);
 
-  const response = await fetch('/api/comments', {
-    method: 'POST',
-    body: JSON.stringify({
-      content,
-      playlist_id,
-      user_id,
-    }),
-    headers: { 'Content-Type': 'application/json' },
-  });
+  // const response = await fetch('/api/comments', {
+  //   method: 'POST',
+  //   body: JSON.stringify({
+  //     content,
+  //     playlist_id,
+  //     user_id,
+  //   }),
+  //   headers: { 'Content-Type': 'application/json' },
+  // });
 
-  if (response.ok) {
-    document.location.reload();
-  } else {
-    alert('Comment not added!');
-  }
+  // if (response.ok) {
+  //   document.location.reload();
+  // } else {
+  //   alert('Comment not added!');
+  // }
 };
 
 (function($){
@@ -40,5 +42,5 @@ const commentFormHandler = async (event) => {
 })(jQuery);
 
 document
-  .querySelector('.new-comment-form')
-  .addEventListener('.commentsubmit', commentFormHandler);
+  .querySelector('.comment-submit')
+  .addEventListener('click', commentFormHandler);
