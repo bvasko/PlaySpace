@@ -36,6 +36,13 @@
 
 .spotify.card .card-image img {
   opacity: .75;
+  filter: grayscale(60%) brightness(1.6) blur(4px);
+}
+
+.spotify.card:hover .card-image img {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1) blur(0px);
+  transition: ease-in-out all .7s;
 }
 
 .spotify.card .card-title {
@@ -54,8 +61,6 @@
   font-weight: 600 !important;
   border-radius: inherit;
 }
-
-
 
 .spotify.card .card-title h5 {
   font-family: 'Source Sans Pro', sans-serif;
