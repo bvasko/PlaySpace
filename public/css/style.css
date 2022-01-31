@@ -97,3 +97,12 @@ h4 {
   width:400px !important;
   height: 90%;
   }
+
+.login-card {
+  padding-right: 25px;
+  width: 350px;
+}
+
+.login-logo {
+  padding: 10px;
+}
