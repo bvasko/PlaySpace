@@ -168,3 +168,15 @@ background-color: #E8429B;
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+#list-details table {
+  table-layout: fixed;
+}
+
+#list-details table td, #list-details table th {
+  width: 20%;
+}
+
+#list-details table td, #list-details table th:nth-child(1) {
+  width: 4%;
+}
