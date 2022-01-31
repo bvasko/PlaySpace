@@ -3,10 +3,11 @@ const { Playlist, Comment, User } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const commentData = await Comment.findAll({ include: { model: Playlist, User } });
+    const commentData = await Comment.findAll({ include: [{ model: Playlist}, { model: User }] });
     const comments = commentData.map(comment => comment.get({ plain: true }));
     console.log(comments)
     res.status(200).json(comments)
+    res.render
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -29,7 +30,7 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const commentData = await Comment.findByPk(req.params.id, { include: { model: Playlist } });
+    const commentData = await Comment.findByPk(req.params.id, { include: [{ model: Playlist}, {model: User}] });
     const comment = commentData.get({ plain: true });
     res.status(200).json(comment)
   } catch (err) {

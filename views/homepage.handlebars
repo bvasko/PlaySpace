@@ -1,4 +1,5 @@
 {{!-- welcome message after sign in --}}
+<div class="row">
 <div class='card-header col-md-10'>
     <h3>
         Welcome <span class="user_name">{{user_name}}</span> to PlaySpace
@@ -7,7 +8,7 @@
 </div>
 
 {{!-- displays spotify playlists --}}
-<div class="spotify-playlist-wrapper">
+<div class="col s12 spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
     <div class="spotify card medium">
         <span class="card-title">
@@ -26,9 +27,9 @@
                 <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
             </div>
             <!-- Modal Trigger -->
-            <a class="waves-effect waves-light modal-trigger" href="#modal1">Comment</a>
+            <a class="waves-effect waves-light modal-trigger" href="#modal{{playlist.id}}">Comment</a>
             <!-- Modal Structure -->
-            <div id="modal1" class="modal">
+            <div id="modal{{playlist.id}}" class="modal">
                 <div class="modal-content">
                 <h4>{{name}}</h4>
                     <h5 >Upvotes: {{upvotes}}</h5>
@@ -38,12 +39,42 @@
                 {{/each}}
                 </div>
                 <div class="modal-footer">
+                    <button class="waves-effect waves-light btn modal-trigger comment-modal-trigger btn-floating btn-large waves-effect waves-light teal comment-button" data-target="modalX{{playlist.id}}"><i class="material-icons">comment</i>Add Comment</button>
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
-            </div>
+            
+            <!-- Modal Structure -->
+             <div id="modalX{{playlist.id}}" class="modal">
+                            <div class="modal-content">
+                                <h4>Add a comment</h4>
+                                {{!-- <p data-playlistId = "{{playlist.id}}" class="post-id">{{playlist.id}}</p> --}}
+                                    <div class="row">
+                                        <form class="col s12 comment-form" data-pid="{{playlist.id}}" data-uid="{{user.id}}">
+                                            <div class="row modal-form-row">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <textarea
+                                                            id="image_description"
+                                                            type="text"
+                                                            class="materialize-textarea validate comment-content"
+                                                        ></textarea>
+                                                        <label for="image_description">What do you think?</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input class="modal-action modal-close waves-effect waves-green btn-flat comment-submit" type="submit" value="Submit">
+                                        </form>
+                                    </div>
+                            </div>
+                            {{!-- <div class="modal-footer"> --}}
+                                {{!-- <a  class="modal-action modal-close waves-effect waves-green btn-flat comment-submit">Submit</a> --}}
+                            {{!-- </div> --}}
+                        </div>
+                        </div>
                     </div>
                 </div>
     {{/each}}
+</div>
 </div>
 
 {{!-- initializes modal --}}
@@ -53,6 +84,7 @@
     var instances = M.Modal.init(modal);
   });
 </script>
+<script src="/js/comments.js"></script>
 
 <script src='./js/upvotes.js'></script>
 

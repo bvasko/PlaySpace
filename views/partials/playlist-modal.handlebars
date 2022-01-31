@@ -1,0 +1,14 @@
+<div class="modal-content">
+                <h4>{{name}}</h4>
+                <h5>Upvotes: {{upvotes}}</h5>
+                <h5>Comments: {{user_comments}}</h5>
+                <p>
+                {{#each comments as |comment|}}
+                     {{>comment-details}}
+                {{/each}}
+                <button class="waves-effect waves-light btn modal-trigger comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right comment-button" data-target="modal{{playlist.id}}"><i class="material-icons">comment</i></button>
+                </p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>

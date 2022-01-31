@@ -1,4 +1,15 @@
 :root {
+<<<<<<< HEAD
+  --primary: #4b917d;
+  --secondary: hsl(77, 88%, 68%);
+  --tertiary: #f037a5;
+  --quatrinary: #4b917d;
+  --light: #ffffff;
+  --dark: #000000;
+  --error: rgb(228, 46, 1);
+  --border-radius: 0.3rem;
+}
+=======
     --primary: #4b917d;
     --secondary: hsl(77, 88%, 68%);
     --tertiary: #E8429B;
@@ -48,32 +59,107 @@
     display: flex;
     background-color: var(--secondary);
   }
+>>>>>>> a0cefc8ef3f40e1b33331c0dd65dceba406e82db
 
-  .white-text li a{
-    color: white
-  }
-
-  #playspace-logo{
-    position: relative;
-    top: 2px;
-    height: 60px;
-    
-  }
-
-  #logout2, #eject-icon, #music-icon, #logout-li, #profile-btn, #profile-btn-link, #profile-li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--quatrinary);
 }
 
- .card-title {
-    font-family: 'Raleway', sans-serif;
+header {
+  text-align: center;
+  background: var(--primary);
+  color: var(--secondary);
+  border-bottom-style: solid;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+aside {
+  flex: 0;
+  background-color: var(--tertiary);
+  padding: 80px;
+  text-align: left;
+  color: var(--light);
+}
+
+nav {
+  display: flex;
+  background-color: var(--secondary);
+}
+
+.white-text li a {
+  color: white;
+}
+
+#playspace-logo {
+  position: relative;
+  top: 2px;
+  height: 60px;
+}
+
+#logout2,
+#eject-icon,
+#music-icon,
+#logout-li,
+#profile-btn,
+#profile-btn-link,
+#profile-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title {
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Raleway", sans-serif;
+}
+
+.right {
+  position: absolute;
+  z-index: 3;
+  right: 18px;
+  top: 15px;
+}
+
+.modal {
+  max-height: 90%;
+}
+
+.modal-form-row {
+  margin-bottom: 0px;
+}
+
+.carousel .carousel-item {
+  width:400px !important;
+  height: 90%;
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Raleway', sans-serif;
-  }
+<<<<<<< HEAD
+.login-card {
+  padding-right: 25px;
+  width: 350px;
+}
 
+.login-logo {
+  padding: 10px;
+}
+=======
   .right {
     position: absolute;
     z-index: 3;
@@ -88,3 +174,4 @@
   .icon-blue {
     color: #080124;
   }
+>>>>>>> a0cefc8ef3f40e1b33331c0dd65dceba406e82db
