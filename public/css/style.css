@@ -92,3 +92,8 @@ h4 {
 .modal-form-row {
   margin-bottom: 0px;
 }
+
+.carousel .carousel-item {
+  width:400px !important;
+  height: 90%;
+  }

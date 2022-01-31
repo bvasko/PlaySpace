@@ -21,10 +21,24 @@ const commentFormHandler = async (event) => {
     alert('Comment not added!');
   }
 };
-$(document).ready(function(){
- $('.comment-modal-trigger').leanModal();
-});
+
+(function($){
+  $.fn.leanModal = function(options) {
+    if( $('.modal').length > 0 ){
+        $('.modal').modal(options);
+    }
+  };
+
+  $.fn.openModal = function(options) {
+    $(this).modal(options);
+    $(this).modal('open');
+  };
+
+  $.fn.closeModal = function() {
+    $(this).modal('close');
+  };
+})(jQuery);
 
 document
   .querySelector('.new-comment-form')
-  .addEventListener('submit', commentFormHandler);
+  .addEventListener('.commentsubmit', commentFormHandler);

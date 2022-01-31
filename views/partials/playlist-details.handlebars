@@ -19,11 +19,7 @@
     <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
     <a href="#"><i class="material-icons">comment</i> {{comments}}</a>
     <!-- Modal Trigger -->
-    <button
-      class="waves-effect waves-light btn comment-modal-trigger"
-      data-target="modal1"
-    >Comment</button>
-
+    <button class="waves-effect waves-light btn comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right" data-target="modal1"><i class="material-icons">insert_comment</i></a>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
       <div class="modal-content">
@@ -46,13 +42,13 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat submit">Submit</a>
       </div>
     </div>
   </div>
-
-  <body>
-
+</div>
+</script>
+<script src='/js/comments.js'></script>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-2.1.1.min.js"
@@ -61,6 +57,6 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"
     ></script>
-    <script src='/js/comments.js'></script>
+    
   </body>
 </div>
