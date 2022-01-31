@@ -2,7 +2,7 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  const playlist_id = document.querySelector('.post-id').innerHTML;
+  const playlist_id = document.querySelectorAll('.post-id');
   const content = document.querySelector('.comment-content').value.trim();
   console.log(content);
   console.log(playlist_id);
@@ -22,7 +22,7 @@ const commentFormHandler = async (event) => {
   // } else {
   //   alert('Comment not added!');
   // }
-  document.querySelector('.comment-content').value = '';
+  document.querySelectorAll('.comment-content').forEach(textArea => textArea.value = '');
 };
 
 (function($){
@@ -43,6 +43,6 @@ const commentFormHandler = async (event) => {
 })(jQuery);
 
 document
-  .querySelector('.comment-submit')
-  .addEventListener('click', commentFormHandler);
+  .querySelectorAll('.comment-submit').forEach(commentSubmit => commentSubmit.addEventListener('click', commentFormHandler));
+  
 

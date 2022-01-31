@@ -34,19 +34,18 @@
                 {{#each comments}}
                      {{>comment-details}}
                 {{/each}}
-                <button class="waves-effect waves-light btn modal-trigger comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right comment-button" data-target="modalX{{comment.id}}"><i class="material-icons">comment</i></button>
+                <button class="waves-effect waves-light btn modal-trigger comment-modal-trigger btn-floating btn-large waves-effect waves-light teal right comment-button" data-target="modalX{{playlist.id}}"><i class="material-icons">comment</i></button>
                 </p>
                 </div>
                 <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
             </div>
-            {{#each this}}
             <!-- Modal Structure -->
-             <div id="modalX{{comment.id}}" class="modal">
+             <div id="modalX{{playlist.id}}" class="modal">
                             <div class="modal-content">
                                 <h4>Add a comment</h4>
-                                <p class="post-id">{{this.id}}</p>
+                                <p data-playlistId = "{{playlist.id}}" class="post-id">{{playlist.id}}</p>
                                     <div class="row">
                                         <form class="col s12">
                                             <div class="row modal-form-row">
@@ -65,10 +64,9 @@
                                     </div>
                             </div>
                             <div class="modal-footer">
-                                <a class="modal-action modal-close waves-effect waves-green btn-flat comment-submit">Submit</a>
+                                <a  class="modal-action modal-close waves-effect waves-green btn-flat comment-submit">Submit</a>
                             </div>
                         </div>
-                        {{/each}}
                     </div>
                 </div>
     {{/each}}
