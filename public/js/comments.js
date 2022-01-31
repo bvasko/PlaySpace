@@ -22,10 +22,9 @@ const commentFormHandler = async (event) => {
   }
 };
 
-// do I need this?
-// $(document).ready(function(){
-//  $('.comment-modal-trigger').leanModal();
-// });
+$(document).ready(function(){
+  $('.comment-modal-trigger').leanModal();
+});
 
 document
   .querySelector('.new-comment-form')
