@@ -48,11 +48,8 @@ router.get('/playlist/:id', async (req, res) => {
         },
       ],
     });
- 
-    
 
     const playlist = playlistData.get({ plain: true });
-    console.log(playlist)
     res.render('playlistDetails', {
       ...playlist,
       logged_in: req.session.logged_in
