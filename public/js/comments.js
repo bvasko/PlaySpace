@@ -41,5 +41,3 @@ $('.comment-form').submit(async function(evt){
     $(this).modal('close');
   };
 })(jQuery);
-
-
