@@ -6,15 +6,6 @@
     
 </div>
 
-{{!-- NEEDS WORK - IS NOT LOADING --}}
-{{!-- parallax image --}}
-<div class="parallax-container">
-      <div class="parallax">
-        <img src="/public/assets/images/backgroundWithLogo.png" style="transform: translate3d(-50%, 612.772px, 0px); opacity: 1;">
-      </div>
-</div>
-
-
 {{!-- displays spotify playlists --}}
 <div class="spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
@@ -35,7 +26,7 @@
         </div>
         <div class="card-action .left-align">
             <div>
-                <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+                <a href="#" data-id='{{playlist.id}}' data-update='{{upvotes}}' class="upvote"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
                 <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
             </div>
             <!-- Modal Trigger -->
@@ -44,7 +35,7 @@
             <div id="modal1" class="modal">
                 <div class="modal-content">
                 <h4>{{name}}</h4>
-                    <h5 data-update='{{upvotes}}'>Upvotes: {{upvotes}}</h5>
+                    <h5 >Upvotes: {{upvotes}}</h5>
                     <h5>Comments: {{user_comments}}</h5>
                     {{#each comments as |comment|}}
                      {{>comment-details}}
@@ -67,10 +58,6 @@
   });
 </script>
 
-{{!-- initializes parallax --}}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems, options);
-  });
-</script>
+<script src='./js/upvotes.js'></script>
+
+
