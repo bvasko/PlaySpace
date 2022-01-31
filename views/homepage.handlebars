@@ -6,6 +6,7 @@
     
 </div>
 
+{{!-- NEEDS WORK - IS NOT LOADING --}}
 {{!-- parallax image --}}
 <div class="parallax-container">
       <div class="parallax">
@@ -34,7 +35,7 @@
             <image src="{{img_url}}"/>
         </div>
         <div class="card-action .left-align">
-            <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+            <a href="#"><i class="material-icons">thumb_up</i> <h5 data-upvote="{{upvotes}}"></h5></a>
             <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
             <!-- Modal Trigger -->
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">See More</a>

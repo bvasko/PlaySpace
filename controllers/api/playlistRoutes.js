@@ -61,4 +61,18 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+// post route for upvotes / STILL NEEDS WHERE CLAUSE
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newPlaylist = await Playlist.update({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newPlaylist);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
