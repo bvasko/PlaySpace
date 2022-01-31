@@ -4,8 +4,6 @@ const queryArray = new URLSearchParams(queryStr);
 const token = queryArray.get('access_token');
 localStorage.setItem('access_token', token);
 
-console.log('#', )
-
 const transferPlaylist = async function(body, cb) {
   try {
     const playlist = await fetch('/api/playlist', {
