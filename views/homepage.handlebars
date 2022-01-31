@@ -1,8 +1,12 @@
+{{!-- welcome message after sign in --}}
 <div class='card-header col-md-10'>
     <h3>
         Welcome <span class="user_name">{{user_name}}</span> to PlaySpace
     </h3>
+    
 </div>
+
+{{!-- displays spotify playlists --}}
 <div class="spotify-playlist-wrapper">
     {{#each playlists as |playlist|}}
     <div class="spotify card medium">
@@ -22,7 +26,7 @@
         </div>
         <div class="card-action .left-align">
             <div>
-                <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+                <a href="#" data-id='{{playlist.id}}' data-update='{{upvotes}}' class="upvote"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
                 <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
             </div>
             <!-- Modal Trigger -->
@@ -31,9 +35,9 @@
             <div id="modal1" class="modal">
                 <div class="modal-content">
                 <h4>{{name}}</h4>
-                <h5>Upvotes: {{upvotes}}</h5>
-                <h5>Comments: {{user_comments}}</h5>
-                {{#each comments as |comment|}}
+                    <h5 >Upvotes: {{upvotes}}</h5>
+                    <h5>Comments: {{user_comments}}</h5>
+                    {{#each comments as |comment|}}
                      {{>comment-details}}
                 {{/each}}
                 </div>
@@ -45,9 +49,15 @@
                 </div>
     {{/each}}
 </div>
+
+{{!-- initializes modal --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var modal = document.querySelectorAll('.modal');
     var instances = M.Modal.init(modal);
   });
 </script>
+
+<script src='./js/upvotes.js'></script>
+
+
