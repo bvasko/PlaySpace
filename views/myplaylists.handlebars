@@ -2,7 +2,7 @@
   <H4 id="spotify-title">Your Playlists:</H4>
   <div class="spotify-playlist-wrapper">
   {{#each playlists as |playlist|}}
-    <div style="width:auto"class="spotify card small">
+    <div class="spotify card medium">
         <span class="card-title">
             <h5>PLAYLIST</h5>
             {{name}}</h3>
@@ -15,9 +15,7 @@
             <a href="#"><i class="material-icons">star_border</i></a>
             {{/if}}
         </div>
-        <div class="card-image">
-            <image src="{{img_url}}" />
-        </div>
+        <div style="background-image: url({{img_url}})" class="card-image"></div>
         <div class="card-action .left-align">
             <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
             <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
