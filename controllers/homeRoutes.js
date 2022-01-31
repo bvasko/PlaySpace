@@ -21,6 +21,7 @@ router.get('/', withAuth, async (req, res) => {
           attributes: ['id', 'content']
         }
       ],
+      limit: 30
     });
 
     // Serialize data so the template can read it
