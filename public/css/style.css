@@ -88,3 +88,8 @@
   .icon-blue {
     color: #080124;
   }
+
+  .login-card {
+    padding-right: 25px;
+    width: 350px;
+  }
