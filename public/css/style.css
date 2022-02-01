@@ -167,3 +167,8 @@ h4 {
   #profile > .title-row h4 {
     font-size: 1.6rem;
   }
+
+.login-card {
+    padding-right: 25px;
+    width: 350px;
+}
