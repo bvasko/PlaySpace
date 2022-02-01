@@ -1,5 +1,8 @@
 $('.upvote').on('click', async function(evt){
-var upvotes = parseInt(evt.currentTarget.dataset.update) + 1;
+const upvotes = Boolean(evt.currentTarget.dataset.update) ?
+  parseInt(evt.currentTarget.dataset.update) + 1 :
+  1;
+
 const playlistId = evt.currentTarget.dataset.id;
   const response = await fetch(`/api/playlist/like/${playlistId}`, {
     method: 'PUT',
