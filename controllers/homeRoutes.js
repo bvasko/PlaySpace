@@ -23,14 +23,15 @@ router.get('/', withAuth, async (req, res) => {
       ],
       limit: 30
     });
-
+    const user = await User.findByPk(req.session.user_id);
+    const user_data = await user.get({plain: true})
     // Serialize data so the template can read it
     const playlists = playlistData.map((playlist) => playlist.get({ plain: true }));
     // Pass serialized data and session flag into template
     res.render('homepage', {
       playlists,
       logged_in: req.session.logged_in,
-      user_name: playlistData[0].user.name
+      user_name: user_data.name
     });
   } catch (error) {
     res.status(404).json(error);
@@ -66,13 +67,13 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Playlist }],
+      include: [{ model: Playlist },]
     });
 
     const user = userData.get({ plain: true });
-
     res.render('profile', {
       ...user,
+      user_name: user.name,
       logged_in: true
     });
   } catch (err) {
