@@ -1,15 +1,4 @@
 :root {
-<<<<<<< HEAD
-  --primary: #4b917d;
-  --secondary: hsl(77, 88%, 68%);
-  --tertiary: #f037a5;
-  --quatrinary: #4b917d;
-  --light: #ffffff;
-  --dark: #000000;
-  --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
-}
-=======
     --primary: #4b917d;
     --secondary: hsl(77, 88%, 68%);
     --tertiary: #E8429B;
@@ -59,7 +48,6 @@
     display: flex;
     background-color: var(--secondary);
   }
->>>>>>> a0cefc8ef3f40e1b33331c0dd65dceba406e82db
 
 body {
   font-family: Arial;
@@ -150,7 +138,6 @@ h4 {
   height: 90%;
   }
 
-<<<<<<< HEAD
 .login-card {
   padding-right: 25px;
   width: 350px;
@@ -159,7 +146,6 @@ h4 {
 .login-logo {
   padding: 10px;
 }
-=======
   .right {
     position: absolute;
     z-index: 3;
@@ -174,4 +160,3 @@ h4 {
   .icon-blue {
     color: #080124;
   }
->>>>>>> a0cefc8ef3f40e1b33331c0dd65dceba406e82db

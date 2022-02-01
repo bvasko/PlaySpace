@@ -1,26 +1,26 @@
+<div class="row">
 <div class="spotify-container">
   <H4 id="spotify-title">Your Playlists:</H4>
-  <div class="spotify-playlist-wrapper">
-  {{#each playlists as |playlist|}}
-    <div class="spotify card medium">
-        <span class="card-title">
-            <h5>PLAYLIST</h5>
-            {{name}}</h3>
-            <h5>Created by: {{user_id}}</h5>
-        </span>
-        <div class="right">
-            <a href="#"><i class="material-icons icon-blue">star_border</i></a>
-        </div>
-        <div style="background-image: url({{img_url}})" class="card-image"></div>
-        <div class="card-action .left-align">
-            <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
-            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
-        </div>
-    </div>
-
-
-  {{/each}}
+  <div class="col s12 spotify-playlist-wrapper">
+    {{#each playlists as |playlist|}}
+      <div class="spotify card medium">
+          <span class="card-title">
+              <h5>PLAYLIST</h5>
+              <a class="detail-link" href="/playlist/{{playlist.id}}">{{name}}</a>
+              <h5>Created by: {{user_id}}</h5>
+          </span>
+          <div class="right">
+              <a href="#"><i class="material-icons icon-blue">star_border</i></a>
+          </div>
+          <div style="background-image: url({{img_url}})" class="card-image"></div>
+          <div class="card-action .left-align">
+              <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+              <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+          </div>
+      </div>
+    {{/each}}
   </div>
+</div>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
