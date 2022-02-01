@@ -1,41 +1,51 @@
-<div class="row">
-<div class="col">
-<h4>{{name}}</h4>
-<h4>{{email}}</h4>
-</div>
-<div class="col">
-    <h1>Profile</h1>
-</div>
+<div id="profile" class="row">
+    <div class="title-row">
+        <div class="col">
+            <h4 class="user_name">{{user_name}}</h4>
+            <h4>{{email}}</h4>
+        </div>
+        <div class="col">
+            <h1>Profile</h1>
+        </div>
+    </div>
+    <div id="profile" class="row">
+        <div class="nav-row">
+            <a class="waves-light btn-small" href="/profile/playlists">View all playlists</a>
+            <a class="waves-light btn-small" href="/spotify-login">Add / Remove Spotify Playlists</a>
+        </div>
+    </div>
 
-<div class="carousel" style="">
-{{#each playlists as |playlist|}}
-<div class="carousel-item">
-    <div style="width:auto"class="spotify card small">
-        <span class="card-title">
-            <h5>PLAYLIST</h5>
-            {{name}}</h3>
-            <h5>Created by: {{user_id}}</h5>
-        </span>
-        <div class="right">
-            <a href="#"><i class="material-icons icon-blue">star_border</i></a>
-        </div>
-        <div class="card-image">
-            <image src="{{img_url}}" />
-        </div>
-        <div class="card-action .left-align">
-            <a href="#"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
-            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+    <div class="carousel" style="">
+        
+        {{#each playlists as |playlist|}}
+            <div class="carousel-item">
+                <div style="width:auto"class="spotify card small">
+                    <span class="card-title">
+                        <h5>PLAYLIST</h5>
+                        <a class="detail-link" href="/playlist/{{playlist.id}}">
+                        {{name}}</a></h3>
+                        <h5>Created by: {{../user_name}}</h5>
+                    </span>
+                    <div class="right">
+                        {{#if favorited}}
+                            <a href="#"><i class="material-icons">star</i></a>
+                        {{else}}
+                            <a href="#"><i class="material-icons">star_border</i></a>
+                        {{/if}}
+                    </div>
+                    <div class="card-image">
+                        <image src="{{img_url}}" />
+                    </div>
+                        <div class="card-action .left-align">
+                            <a href="#" data-id='{{playlist.id}}' data-update='{{upvotes}}' class="upvote"><i class="material-icons">thumb_up</i> {{upvotes}}</a>
+                            <a href="#"><i class="material-icons">comment</i> {{user_comments}}</a>
+                            
+                        </div>
                     </div>
                 </div>
-                </div>
     {{/each}}
     </div>
-    </div>
-{{!-- <div class="carousel">
-    {{#each playlist}}
-    <a class="carousel-item" href="#one!"><img src={{user.playlist.img_url}}></a>
-    {{/each}}
-</div> --}}
+</div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var modal = document.querySelectorAll('.modal');
@@ -45,4 +55,7 @@
         var carousel = document.querySelectorAll('.carousel');
         var instances = M.Carousel.init(carousel);
       });
+       
 </script>
+<script src='/js/upvotes.js'></script>
+<script src='/js/comments.js'></script>

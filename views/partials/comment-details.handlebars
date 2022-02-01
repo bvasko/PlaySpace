@@ -1,14 +1,12 @@
+{{!-- {{content}} - {{name}} --}}
 <div class="row">
-    <div class="display-flex-column justify-content-center col s4">
-      <div class="card blue-grey">
-        <div class="card-content blue-grey">
-          <span class="card-title">{{content}}</span>
-          <p>{{content}}</p>
-          <p>-{{user_id}}</p>
+    <div class="col s12" style="height:auto">
+      <div class="card white z-depth-4">
+        <div class="card-content white">
+          <p class="card-title blue-gray-text">{{content}}</>
         </div>
         <div class="card-action display-flex justify content-center">
-          <a href="#">Like</a>
-          <a href="#">Dislike</a>
+          <p class="comment-user">{{ user.name }}</p>
         </div>
       </div>
     </div>

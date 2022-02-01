@@ -1,14 +1,27 @@
-{{#if loggedIn}}
-<div class='card-header col-md-10'>
-    <h3>
-      
-    </h3>
+<div id="list-details">
+  {{#if logged_in}}
+  <div class="row">
+      <h3 id="title" data-spotify='{{spotify_id}}'>
+        {{name}}
+      </h3>
+  </div>
+  <div class="row">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Album</th>
+                <th><i class="material-icons">schedule</i></th>
+            </tr>
+          </thead>
+          <tbody id="tBody">
+          </tbody>
+        </table>
+  </div>
+  {{else}}
+    <a href="/login">You must login before you can jam!</a>
+  {{/if}}
 </div>
-<div class="spotify-playlist-wrapper">
-  <div class="spotify card medium">
 
-    </div>
-</div>
-{{else}}
-<a href="/login">You must login before you can jam!</a>
-{{/if}}
+<script src="/js/playlistDetails.js"></script>
