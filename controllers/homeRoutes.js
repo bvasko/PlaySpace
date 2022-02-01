@@ -18,7 +18,11 @@ router.get('/', withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'content']
+          include: [{
+            model: User,
+            attributes: ['name'],
+          }],
+          attributes: ['id', 'content', 'user_id']
         }
       ],
       limit: 30
